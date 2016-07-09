@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFLRecommendVC">
+            <connections>
+                <outlet property="categoryTableView" destination="shE-Bg-xFc" id="W0A-fx-lH3"/>
+                <outlet property="showTableView" destination="Igg-uG-c7H" id="K5W-mG-Nsv"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" sectionIndexMinimumDisplayRowCount="1" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="shE-Bg-xFc" userLabel="左侧">
+                    <rect key="frame" x="0.0" y="0.0" width="70" height="600"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="70" id="SVD-mQ-gWe"/>
+                    </constraints>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="Gxt-wa-jHI"/>
+                        <outlet property="delegate" destination="-1" id="Mzt-gg-APl"/>
+                    </connections>
+                </tableView>
+                <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Igg-uG-c7H" userLabel="右侧">
+                    <rect key="frame" x="70" y="0.0" width="530" height="600"/>
+                    <color key="backgroundColor" white="1" alpha="0.5" colorSpace="calibratedWhite"/>
+                    <connections>
+                        <outlet property="dataSource" destination="-1" id="DDz-w8-cSL"/>
+                    </connections>
+                </tableView>
+            </subviews>
+            <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="Igg-uG-c7H" secondAttribute="bottom" id="7cl-n3-49l"/>
+                <constraint firstAttribute="bottom" secondItem="shE-Bg-xFc" secondAttribute="bottom" id="Rhr-LR-pJe"/>
+                <constraint firstAttribute="trailing" secondItem="Igg-uG-c7H" secondAttribute="trailing" id="WNe-fm-5HH"/>
+                <constraint firstItem="Igg-uG-c7H" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="a0f-vi-ydV"/>
+                <constraint firstItem="Igg-uG-c7H" firstAttribute="leading" secondItem="shE-Bg-xFc" secondAttribute="trailing" id="dRv-lZ-MxC"/>
+                <constraint firstItem="shE-Bg-xFc" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="eR1-vX-QlS"/>
+                <constraint firstItem="shE-Bg-xFc" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="mes-im-uHB"/>
+            </constraints>
+        </view>
+    </objects>
+</document>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
+        <capability name="Constraints with non-1.0 multipliers" minToolsVersion="5.1"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="SFLShowPictureVC">
+            <connections>
+                <outlet property="progressLabel" destination="WBS-2L-HIb" id="7c0-jM-WS4"/>
+                <outlet property="progressView" destination="0L4-Q1-Fa6" id="Rvx-Dr-sDb"/>
+                <outlet property="scorllView" destination="fua-hU-nAF" id="zUK-Uv-SLi"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fua-hU-nAF">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </scrollView>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="5fu-8z-AQ9" userLabel="back">
+                    <rect key="frame" x="15" y="40" width="35" height="35"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="35" id="iRQ-1t-XIL"/>
+                        <constraint firstAttribute="height" constant="35" id="vXW-Ty-H39"/>
+                    </constraints>
+                    <state key="normal" backgroundImage="show_image_back_icon"/>
+                    <connections>
+                        <action selector="back" destination="-1" eventType="touchUpInside" id="JYI-fC-OwN"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ycs-23-rK5">
+                    <rect key="frame" x="280" y="622" width="75" height="25"/>
+                    <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="75" id="SnU-8v-6HO"/>
+                        <constraint firstAttribute="height" constant="25" id="cSp-G4-bCl"/>
+                    </constraints>
+                    <state key="normal" title="保存"/>
+                    <connections>
+                        <action selector="save" destination="-1" eventType="touchUpInside" id="bAl-ej-J3u"/>
+                    </connections>
+                </button>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S4R-vz-uwy" userLabel="转发">
+                    <rect key="frame" x="180" y="622" width="75" height="25"/>
+                    <color key="backgroundColor" red="0.49803921579999999" green="0.49803921579999999" blue="0.49803921579999999" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <state key="normal" title="转发"/>
+                </button>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="0L4-Q1-Fa6" userLabel="progress" customClass="SFLCircleProgressView">
+                    <rect key="frame" x="93" y="240" width="188" height="188"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                </view>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0%" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WBS-2L-HIb">
+                    <rect key="frame" x="167" y="316" width="42" height="36"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="Ycs-23-rK5" secondAttribute="trailing" constant="20" id="0kf-vg-JhA"/>
+                <constraint firstItem="5fu-8z-AQ9" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" constant="15" id="2BE-ZF-JZr"/>
+                <constraint firstItem="0L4-Q1-Fa6" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="2Rn-nw-bOD"/>
+                <constraint firstItem="WBS-2L-HIb" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="335-ca-4rO"/>
+                <constraint firstAttribute="bottom" secondItem="fua-hU-nAF" secondAttribute="bottom" id="8Sn-3F-OHY"/>
+                <constraint firstItem="0L4-Q1-Fa6" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="FFh-Va-mb3"/>
+                <constraint firstItem="fua-hU-nAF" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="GFd-es-M5e"/>
+                <constraint firstItem="0L4-Q1-Fa6" firstAttribute="width" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="HfS-pD-Ib1"/>
+                <constraint firstItem="WBS-2L-HIb" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="I4u-zj-T5K"/>
+                <constraint firstItem="fua-hU-nAF" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="OdD-IJ-uq7"/>
+                <constraint firstItem="S4R-vz-uwy" firstAttribute="bottom" secondItem="Ycs-23-rK5" secondAttribute="bottom" id="PkS-Xb-QyR"/>
+                <constraint firstItem="Ycs-23-rK5" firstAttribute="leading" secondItem="S4R-vz-uwy" secondAttribute="trailing" constant="25" id="WNr-r4-SOS"/>
+                <constraint firstItem="S4R-vz-uwy" firstAttribute="top" secondItem="Ycs-23-rK5" secondAttribute="top" id="ZMf-8Y-eVS"/>
+                <constraint firstItem="5fu-8z-AQ9" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" constant="40" id="byg-hO-TuN"/>
+                <constraint firstAttribute="bottom" secondItem="Ycs-23-rK5" secondAttribute="bottom" constant="20" id="cHT-CT-BdI"/>
+                <constraint firstItem="0L4-Q1-Fa6" firstAttribute="height" secondItem="i5M-Pr-FkT" secondAttribute="width" multiplier="0.5" id="huk-W0-Yea"/>
+                <constraint firstAttribute="trailing" secondItem="fua-hU-nAF" secondAttribute="trailing" id="xEw-ab-BtP"/>
+                <constraint firstItem="S4R-vz-uwy" firstAttribute="width" secondItem="Ycs-23-rK5" secondAttribute="width" id="zjh-Sx-gFw"/>
+            </constraints>
+            <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="show_image_back_icon" width="35" height="35"/>
+    </resources>
+</document>
