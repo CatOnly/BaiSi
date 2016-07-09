@@ -49,6 +49,9 @@
 		A44197D01D2FFC0B003717CF /* SFLTopicCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44197A51D2FFC0B003717CF /* SFLTopicCell.xib */; };
 		A44197D11D2FFC0B003717CF /* SFLTopicPictureView.m in Sources */ = {isa = PBXBuildFile; fileRef = A44197A71D2FFC0B003717CF /* SFLTopicPictureView.m */; };
 		A44197D21D2FFC0B003717CF /* SFLTopicPictureView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A44197A81D2FFC0B003717CF /* SFLTopicPictureView.xib */; };
+		A48A7A421D30E72F0095ED8F /* SFLTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A48A7A411D30E72F0095ED8F /* SFLTopicVoiceView.m */; };
+		A48A7A441D30E7460095ED8F /* SFLTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48A7A431D30E7460095ED8F /* SFLTopicVoiceView.xib */; };
+		A48A7A471D30FB020095ED8F /* SFLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A48A7A461D30FB020095ED8F /* SFLTools.m */; };
 		A4D3FF531D2FFABB0070CB74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3FF521D2FFABB0070CB74 /* main.m */; };
 		A4D3FF5E1D2FFABC0070CB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D3FF5D1D2FFABC0070CB74 /* Assets.xcassets */; };
 		B8408B4E543D15E869374FC1 /* libPods-百思不得姐.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B8D079928A7D0A1DD88D9F /* libPods-百思不得姐.a */; };
@@ -131,6 +134,11 @@
 		A44197A61D2FFC0B003717CF /* SFLTopicPictureView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLTopicPictureView.h; sourceTree = "<group>"; };
 		A44197A71D2FFC0B003717CF /* SFLTopicPictureView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLTopicPictureView.m; sourceTree = "<group>"; };
 		A44197A81D2FFC0B003717CF /* SFLTopicPictureView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFLTopicPictureView.xib; sourceTree = "<group>"; };
+		A48A7A401D30E72F0095ED8F /* SFLTopicVoiceView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLTopicVoiceView.h; sourceTree = "<group>"; };
+		A48A7A411D30E72F0095ED8F /* SFLTopicVoiceView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLTopicVoiceView.m; sourceTree = "<group>"; };
+		A48A7A431D30E7460095ED8F /* SFLTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFLTopicVoiceView.xib; sourceTree = "<group>"; };
+		A48A7A451D30FB020095ED8F /* SFLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFLTools.h; path = Controller/SFLTools.h; sourceTree = "<group>"; };
+		A48A7A461D30FB020095ED8F /* SFLTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFLTools.m; path = Controller/SFLTools.m; sourceTree = "<group>"; };
 		A4D3FF4E1D2FFABB0070CB74 /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D3FF521D2FFABB0070CB74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4D3FF5D1D2FFABC0070CB74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -182,6 +190,8 @@
 				A441975F1D2FFC0B003717CF /* SFLCircleProgressView.m */,
 				A44197601D2FFC0B003717CF /* SFLConst.h */,
 				A44197611D2FFC0B003717CF /* SFLConst.m */,
+				A48A7A451D30FB020095ED8F /* SFLTools.h */,
+				A48A7A461D30FB020095ED8F /* SFLTools.m */,
 				A44197621D2FFC0B003717CF /* View */,
 			);
 			path = "公共";
@@ -395,6 +405,9 @@
 				A44197A61D2FFC0B003717CF /* SFLTopicPictureView.h */,
 				A44197A71D2FFC0B003717CF /* SFLTopicPictureView.m */,
 				A44197A81D2FFC0B003717CF /* SFLTopicPictureView.xib */,
+				A48A7A401D30E72F0095ED8F /* SFLTopicVoiceView.h */,
+				A48A7A411D30E72F0095ED8F /* SFLTopicVoiceView.m */,
+				A48A7A431D30E7460095ED8F /* SFLTopicVoiceView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -515,6 +528,7 @@
 				A44197B41D2FFC0B003717CF /* SFLPushGuidView.xib in Resources */,
 				A44197C91D2FFC0B003717CF /* SFLShowPictureVC.xib in Resources */,
 				A44197D21D2FFC0B003717CF /* SFLTopicPictureView.xib in Resources */,
+				A48A7A441D30E7460095ED8F /* SFLTopicVoiceView.xib in Resources */,
 				A44197BA1D2FFC0B003717CF /* SFLRecommendVC.xib in Resources */,
 				A4D3FF5E1D2FFABC0070CB74 /* Assets.xcassets in Resources */,
 				A44197AF1D2FFC0B003717CF /* SFLPublishVC.xib in Resources */,
@@ -594,6 +608,7 @@
 				A44197C71D2FFC0B003717CF /* SFLRecommendTagsVC.m in Sources */,
 				A44197BB1D2FFC0B003717CF /* SFLRecommendDisplay.m in Sources */,
 				A44197BE1D2FFC0B003717CF /* SFLLoginTextField.m in Sources */,
+				A48A7A421D30E72F0095ED8F /* SFLTopicVoiceView.m in Sources */,
 				A44197B61D2FFC0B003717CF /* SFLFriendsVC.m in Sources */,
 				A44197B31D2FFC0B003717CF /* SFLPushGuidView.m in Sources */,
 				A44197AA1D2FFC0B003717CF /* NSDate+SFLExtension.m in Sources */,
@@ -606,6 +621,7 @@
 				A44197B11D2FFC0B003717CF /* SFLCircleProgressView.m in Sources */,
 				A44197BF1D2FFC0B003717CF /* SFLRecommendDisplayCell.m in Sources */,
 				A44197B21D2FFC0B003717CF /* SFLConst.m in Sources */,
+				A48A7A471D30FB020095ED8F /* SFLTools.m in Sources */,
 				A4D3FF531D2FFABB0070CB74 /* main.m in Sources */,
 				A44197AC1D2FFC0B003717CF /* UIView+SFLExtension.m in Sources */,
 			);

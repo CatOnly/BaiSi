@@ -11,11 +11,11 @@
 @implementation SFLTopic
 {   // @implementation 中的默认私有
     CGFloat _cellHeight;
-    CGRect _pictureFrame;
 }
 
 + (instancetype)topicWithDic:(NSDictionary *)dic{
     SFLTopic *topic = [[SFLTopic alloc] init];
+    // 基本框架
     topic.name = dic[@"name"];
     topic.profile_image = dic[@"profile_image"];
     topic.create_time = dic[@"create_time"];
@@ -25,6 +25,7 @@
     topic.comment = [dic[@"comment"] integerValue];
     topic.sina_v = [dic[@"sina_v"] boolValue];
     
+    // 图片内容
     topic.type = (SFLTopicType)[dic[@"type"] integerValue];
     topic.text = dic[@"text"];
     topic.width = [dic[@"width"] integerValue];
@@ -33,7 +34,10 @@
     topic.middle_image = dic[@"image2"];
     topic.large_image = dic[@"image1"];
 
-
+    // 声音内容
+    topic.voicetime = [dic[@"voicetime"] integerValue];
+    topic.playcount = [dic[@"playcount"] integerValue];
+    
     return topic;
 }
 
@@ -82,28 +86,25 @@
         // 设置默认值
         self.isBigPicture = NO;
         
+        CGFloat width = textMaxSize.width;
         // 根据 内容类型 计算 cell 高度
         if (self.type == SFLTopicTypePicture) {
             // 图片尺寸自适应
-            CGFloat pictureW = textMaxSize.width;
-            CGFloat pictureH = pictureW * self.height / self.width;
-            
+            CGFloat pictureH = width * self.height / self.width;
             // 图片高度过长
             if (pictureH >= SFLTopicCellPictureMaxH) {
                 pictureH = SFLTopicCellPictureBreakH;
                 self.isBigPicture = YES; // 大图
             }
-            
             // 计算图片控件的frame
-            CGFloat pictureX = SFLTopicCellMargin;
-            CGFloat pictureY = _cellHeight;
-            _pictureFrame = CGRectMake(pictureX, pictureY, pictureW, pictureH);
-            
+            _pictureFrame = CGRectMake(SFLTopicCellMargin, _cellHeight, width, pictureH);
             // 计算 cell 的高度
-            _cellHeight = pictureY + pictureH + SFLTopicCellMargin;
+            _cellHeight += pictureH + SFLTopicCellMargin;
         } else if (self.type == SFLTopicTypeVoice) {
             // 声音帖子
-            
+            CGFloat voiceH = width * self.height / self.width;
+            _voiceFrame = CGRectMake(SFLTopicCellMargin, _cellHeight, width, voiceH);
+            _cellHeight += voiceH + SFLTopicCellMargin;
         }
         
         _cellHeight += SFLTopicCellMargin + SFLTopicCellBottomBarH;

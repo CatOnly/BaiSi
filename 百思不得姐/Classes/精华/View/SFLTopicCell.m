@@ -9,6 +9,7 @@
 #import "SFLTopicCell.h"
 #import "SFLTopic.h"
 #import "SFLTopicPictureView.h"
+#import "SFLTopicVoiceView.h"
 
 #import <UIImageView+WebCache.h>
 
@@ -29,6 +30,8 @@
 
 /** 图片帖子中间的内容 */
 @property (nonatomic,weak) SFLTopicPictureView *pictureView;
+/** 声音帖子内容 */
+@property (nonatomic,weak) SFLTopicVoiceView *voiceView;
 
 @end
 
@@ -57,6 +60,16 @@
     }
     return _pictureView;
 }
+
+- (SFLTopicVoiceView *)voiceView{
+    if (_voiceView == nil) {
+        SFLTopicVoiceView *cv = [SFLTopicVoiceView voiceView];
+        [self.contentView addSubview:cv];
+        _voiceView = cv;
+    }
+    return _voiceView;
+}
+
 
 - (void)setTopic:(SFLTopic *)topic{
     _topic = topic;
@@ -88,8 +101,10 @@
         self.pictureView.topic = topic;
         self.pictureView.frame = topic.pictureFrame;
     } else if (topic.type == SFLTopicTypeVoice) { // 声音帖子
-        //        self.voiceView.topic = topic;
-        //        self.voiceView.frame = topic.voiceF;
+        self.voiceView.topic = topic;
+        self.voiceView.frame = topic.voiceFrame;
+    } else if (topic.type == SFLTopicTypeVideo){
+        
     } else {
         self.pictureView.hidden = YES;
     }
