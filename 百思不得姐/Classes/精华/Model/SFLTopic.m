@@ -34,10 +34,13 @@
     topic.middle_image = dic[@"image2"];
     topic.large_image = dic[@"image1"];
 
-    // 声音内容
+    // 音频内容
     topic.voicetime = [dic[@"voicetime"] integerValue];
-    topic.playcount = [dic[@"playcount"] integerValue];
+    // 视频内容
+    topic.videotime = [dic[@"videotime"] integerValue];
     
+    topic.playcount = [dic[@"playcount"] integerValue];
+
     return topic;
 }
 
@@ -101,10 +104,13 @@
             // 计算 cell 的高度
             _cellHeight += pictureH + SFLTopicCellMargin;
         } else if (self.type == SFLTopicTypeVoice) {
-            // 声音帖子
             CGFloat voiceH = width * self.height / self.width;
             _voiceFrame = CGRectMake(SFLTopicCellMargin, _cellHeight, width, voiceH);
             _cellHeight += voiceH + SFLTopicCellMargin;
+        } else if (self.type == SFLTopicTypeVideo){
+            CGFloat videoH = width * self.height / self.width;
+            _videoFrame = CGRectMake(SFLTopicCellMargin, _cellHeight, width, videoH);
+            _cellHeight += videoH + SFLTopicCellMargin;
         }
         
         _cellHeight += SFLTopicCellMargin + SFLTopicCellBottomBarH;

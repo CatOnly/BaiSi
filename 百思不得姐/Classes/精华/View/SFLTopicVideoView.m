@@ -1,28 +1,28 @@
 //
-//  SFLVoiceView.m
+//  SFLTopicVideo.m
 //  百思不得姐
 //
 //  Created by Light on 7-9.
 //  Copyright © 2016年 Light. All rights reserved.
 //
 
-#import "SFLTopicVoiceView.h"
+#import "SFLTopicVideoView.h"
 #import "SFLTopic.h"
 #import "SFLShowPictureVC.h"
 
 #import <UIImageView+WebCache.h>
 
-@interface SFLTopicVoiceView()
+@interface SFLTopicVideoView()
 @property (weak, nonatomic) IBOutlet UIImageView *bgImgView;
+@property (weak, nonatomic) IBOutlet UILabel *videotimeLabel;
 @property (weak, nonatomic) IBOutlet UILabel *playcountLabel;
-@property (weak, nonatomic) IBOutlet UILabel *voicetimeLabel;
 @property (weak, nonatomic) IBOutlet UIButton *playBtn;
 
 @end
 
-@implementation SFLTopicVoiceView
+@implementation SFLTopicVideoView
 
-+ (instancetype)voiceView{
++ (instancetype)videoView{
     return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] lastObject];
 }
 
@@ -44,7 +44,8 @@
     _topic = topic;
     [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:topic.large_image]];
     self.playcountLabel.text = [NSString stringWithFormat:@"%zd播放",topic.playcount];
-    self.voicetimeLabel.text = timeFormatWithSec(topic.voicetime);
+    self.videotimeLabel.text = timeFormatWithSec(topic.videotime);
+
 }
 
 @end

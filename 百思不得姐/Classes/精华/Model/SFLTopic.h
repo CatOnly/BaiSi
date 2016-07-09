@@ -43,8 +43,11 @@
 @property (nonatomic, assign) SFLTopicType type;
 /** 音频时长 */
 @property (nonatomic, assign) NSInteger voicetime;
-/** 音频播放次数 */
+/** 视频时长 */
+@property (nonatomic, assign) NSInteger videotime;
+/** 播放次数 */
 @property (nonatomic, assign) NSInteger playcount;
+
 
 
 // 额外的辅助属性
@@ -52,6 +55,11 @@
 @property (nonatomic, assign, readonly) CGFloat cellHeight;
 /** 图片控件的frame */
 @property (nonatomic, assign, readonly) CGRect pictureFrame;
+/** 声音控件的frame */
+@property (nonatomic, assign, readonly) CGRect voiceFrame;
+/** 视频控件的frame */
+@property (nonatomic, assign, readonly) CGRect videoFrame;
+
 /** 图片是否太大 */
 @property (nonatomic, assign) BOOL isBigPicture;
 
@@ -59,8 +67,6 @@
 @property (nonatomic, assign) CGFloat pictureProgress;
 
 
-/** 声音控件的frame */
-@property (nonatomic, assign, readonly) CGRect voiceFrame;
 
 + (instancetype)topicWithDic:(NSDictionary *)dic;
 @end

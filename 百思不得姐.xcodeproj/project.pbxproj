@@ -52,6 +52,8 @@
 		A48A7A421D30E72F0095ED8F /* SFLTopicVoiceView.m in Sources */ = {isa = PBXBuildFile; fileRef = A48A7A411D30E72F0095ED8F /* SFLTopicVoiceView.m */; };
 		A48A7A441D30E7460095ED8F /* SFLTopicVoiceView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48A7A431D30E7460095ED8F /* SFLTopicVoiceView.xib */; };
 		A48A7A471D30FB020095ED8F /* SFLTools.m in Sources */ = {isa = PBXBuildFile; fileRef = A48A7A461D30FB020095ED8F /* SFLTools.m */; };
+		A48A7A4A1D3100CB0095ED8F /* SFLTopicVideoView.m in Sources */ = {isa = PBXBuildFile; fileRef = A48A7A491D3100CB0095ED8F /* SFLTopicVideoView.m */; };
+		A48A7A4C1D3100DE0095ED8F /* SFLTopicVideoView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A48A7A4B1D3100DE0095ED8F /* SFLTopicVideoView.xib */; };
 		A4D3FF531D2FFABB0070CB74 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = A4D3FF521D2FFABB0070CB74 /* main.m */; };
 		A4D3FF5E1D2FFABC0070CB74 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A4D3FF5D1D2FFABC0070CB74 /* Assets.xcassets */; };
 		B8408B4E543D15E869374FC1 /* libPods-百思不得姐.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 59B8D079928A7D0A1DD88D9F /* libPods-百思不得姐.a */; };
@@ -139,6 +141,9 @@
 		A48A7A431D30E7460095ED8F /* SFLTopicVoiceView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFLTopicVoiceView.xib; sourceTree = "<group>"; };
 		A48A7A451D30FB020095ED8F /* SFLTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SFLTools.h; path = Controller/SFLTools.h; sourceTree = "<group>"; };
 		A48A7A461D30FB020095ED8F /* SFLTools.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SFLTools.m; path = Controller/SFLTools.m; sourceTree = "<group>"; };
+		A48A7A481D3100CB0095ED8F /* SFLTopicVideoView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLTopicVideoView.h; sourceTree = "<group>"; };
+		A48A7A491D3100CB0095ED8F /* SFLTopicVideoView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLTopicVideoView.m; sourceTree = "<group>"; };
+		A48A7A4B1D3100DE0095ED8F /* SFLTopicVideoView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFLTopicVideoView.xib; sourceTree = "<group>"; };
 		A4D3FF4E1D2FFABB0070CB74 /* 百思不得姐.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "百思不得姐.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A4D3FF521D2FFABB0070CB74 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		A4D3FF5D1D2FFABC0070CB74 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -408,6 +413,9 @@
 				A48A7A401D30E72F0095ED8F /* SFLTopicVoiceView.h */,
 				A48A7A411D30E72F0095ED8F /* SFLTopicVoiceView.m */,
 				A48A7A431D30E7460095ED8F /* SFLTopicVoiceView.xib */,
+				A48A7A481D3100CB0095ED8F /* SFLTopicVideoView.h */,
+				A48A7A491D3100CB0095ED8F /* SFLTopicVideoView.m */,
+				A48A7A4B1D3100DE0095ED8F /* SFLTopicVideoView.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -520,6 +528,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A44197B81D2FFC0B003717CF /* SFLLoginRegisterVC.xib in Resources */,
+				A48A7A4C1D3100DE0095ED8F /* SFLTopicVideoView.xib in Resources */,
 				A44197CE1D2FFC0B003717CF /* SFLRecommendTagCell.xib in Resources */,
 				A44197C01D2FFC0B003717CF /* SFLRecommendDisplayCell.xib in Resources */,
 				A44197BD1D2FFC0B003717CF /* SFLFriendsVC.xib in Resources */,
@@ -623,6 +632,7 @@
 				A44197B21D2FFC0B003717CF /* SFLConst.m in Sources */,
 				A48A7A471D30FB020095ED8F /* SFLTools.m in Sources */,
 				A4D3FF531D2FFABB0070CB74 /* main.m in Sources */,
+				A48A7A4A1D3100CB0095ED8F /* SFLTopicVideoView.m in Sources */,
 				A44197AC1D2FFC0B003717CF /* UIView+SFLExtension.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

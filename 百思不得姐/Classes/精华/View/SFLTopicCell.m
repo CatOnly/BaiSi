@@ -10,6 +10,7 @@
 #import "SFLTopic.h"
 #import "SFLTopicPictureView.h"
 #import "SFLTopicVoiceView.h"
+#import "SFLTopicVideoView.h"
 
 #import <UIImageView+WebCache.h>
 
@@ -32,6 +33,9 @@
 @property (nonatomic,weak) SFLTopicPictureView *pictureView;
 /** 声音帖子内容 */
 @property (nonatomic,weak) SFLTopicVoiceView *voiceView;
+/** 视频帖子内容 */
+@property (nonatomic,weak) SFLTopicVideoView *videoView;
+
 
 @end
 
@@ -70,6 +74,16 @@
     return _voiceView;
 }
 
+- (SFLTopicVideoView *)videoView{
+    if (_videoView == nil) {
+        SFLTopicVideoView *v = [SFLTopicVideoView videoView];
+        [self.contentView addSubview:v];
+        _videoView = v;
+    }
+    return _videoView;
+}
+
+
 
 - (void)setTopic:(SFLTopic *)topic{
     _topic = topic;
@@ -95,18 +109,23 @@
     // 设置帖子文字内容
     self.text_label.text = topic.text;
     
+    self.pictureView.hidden = YES;
+    self.voiceView.hidden = YES;
+    self.videoView.hidden = YES;
+
     // 根据模型类型(帖子类型)添加对应的内容到 cell 的中间
     if (topic.type == SFLTopicTypePicture) { // 图片帖子
         self.pictureView.hidden = NO;
         self.pictureView.topic = topic;
         self.pictureView.frame = topic.pictureFrame;
     } else if (topic.type == SFLTopicTypeVoice) { // 声音帖子
+        self.voiceView.hidden = NO;
         self.voiceView.topic = topic;
         self.voiceView.frame = topic.voiceFrame;
     } else if (topic.type == SFLTopicTypeVideo){
-        
-    } else {
-        self.pictureView.hidden = YES;
+        self.videoView.hidden = NO;
+        self.videoView.topic = topic;
+        self.videoView.frame = topic.videoFrame;
     }
 
 }
