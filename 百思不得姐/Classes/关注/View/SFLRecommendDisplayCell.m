@@ -31,13 +31,11 @@
     } else {
         self.fansCountLabel.text = [NSString stringWithFormat:@"%.1f万人关注",fansCount/10000.0];
     }
-
-    [self.headerImgV sd_setImageWithURL:[NSURL URLWithString:displayCard.header] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.headerImgV setCircleHeaderWithURLString:displayCard.header];
 }
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

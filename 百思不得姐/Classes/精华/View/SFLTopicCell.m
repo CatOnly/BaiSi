@@ -11,6 +11,8 @@
 #import "SFLTopicPictureView.h"
 #import "SFLTopicVoiceView.h"
 #import "SFLTopicVideoView.h"
+#import "SFLComment.h"
+#import "SFLUser.h"
 
 #import <UIImageView+WebCache.h>
 
@@ -35,11 +37,19 @@
 @property (nonatomic,weak) SFLTopicVoiceView *voiceView;
 /** 视频帖子内容 */
 @property (nonatomic,weak) SFLTopicVideoView *videoView;
+/** 最热评论整体 */
+@property (weak, nonatomic) IBOutlet UIView *topCmtView;
+/** 最热评论内容*/
+@property (weak, nonatomic) IBOutlet UILabel *topCmtContentLabel;
 
 
 @end
 
 @implementation SFLTopicCell
+
++ (instancetype)cell {
+    return [[[NSBundle mainBundle] loadNibNamed:NSStringFromClass(self) owner:nil options:nil] firstObject];
+}
 
 - (void)awakeFromNib {
     [super awakeFromNib];
@@ -52,7 +62,7 @@
     frame.origin.x = SFLTopicCellMargin;
     frame.origin.y += SFLTopicCellMargin;
     frame.size.width  -= SFLTopicCellMargin * 2;
-    frame.size.height -= SFLTopicCellMargin;
+    frame.size.height = self.topic.cellHeight - SFLTopicCellMargin;
     [super setFrame:frame];
 }
 
@@ -92,7 +102,7 @@
     self.sinaVView.hidden = !topic.isSina_v;
     
     // 设置头像
-    [self.profileImageView sd_setImageWithURL:[NSURL URLWithString:topic.profile_image] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.profileImageView setCircleHeaderWithURLString:topic.profile_image];
     
     // 设置名字
     self.nameLabel.text = topic.name;
@@ -127,6 +137,14 @@
         self.videoView.topic = topic;
         self.videoView.frame = topic.videoFrame;
     }
+    
+    // 处理最热评论
+    if (topic.top_cmt) {
+        self.topCmtView.hidden = NO;
+        self.topCmtContentLabel.text = [NSString stringWithFormat:@"%@ : %@", topic.top_cmt.user.username, topic.top_cmt.content];
+    } else {
+        self.topCmtView.hidden = YES;
+    }
 
 }
 
@@ -137,6 +155,10 @@
         placeholder = [NSString stringWithFormat:@"%zd", count];
     }
     [button setTitle:placeholder forState:UIControlStateNormal];
+}
+- (IBAction)more:(id)sender {
+    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil  delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"举报" otherButtonTitles:@"收藏", nil];
+    [sheet showInView:self.window];
 }
 
 @end

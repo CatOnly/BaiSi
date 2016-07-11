@@ -9,6 +9,7 @@
 #import "AppDelegate.h"
 #import "SFLTabBarController.h"
 #import "SFLPushGuidView.h"
+#import "SFLTopWindow.h"
 
 @interface AppDelegate ()
 
@@ -22,12 +23,11 @@
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 设置窗口根控制器
     self.window.rootViewController = [[SFLTabBarController alloc] init];
-
     // 显示窗口
     [self.window makeKeyAndVisible];
-    
     // 显示引导视图
     [SFLPushGuidView show];
+    
     return YES;
 }
 
@@ -47,6 +47,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application {
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+    // 添加一个 window 专门用来处理点击此 window 时 scrollView 的回滚
+//    [SFLTopWindow show];
 }
 
 - (void)applicationWillTerminate:(UIApplication *)application {

@@ -7,41 +7,29 @@
 //
 
 #import "SFLTopic.h"
+#import "SFLUser.h"
+#import "SFLComment.h"
+
+#import <MJExtension.h>
 
 @implementation SFLTopic
 {   // @implementation 中的默认私有
     CGFloat _cellHeight;
 }
 
-+ (instancetype)topicWithDic:(NSDictionary *)dic{
-    SFLTopic *topic = [[SFLTopic alloc] init];
-    // 基本框架
-    topic.name = dic[@"name"];
-    topic.profile_image = dic[@"profile_image"];
-    topic.create_time = dic[@"create_time"];
-    topic.ding = [dic[@"love"] integerValue];
-    topic.cai = [dic[@"cai"] integerValue];
-    topic.repost = [dic[@"repost"] integerValue];
-    topic.comment = [dic[@"comment"] integerValue];
-    topic.sina_v = [dic[@"sina_v"] boolValue];
-    
-    // 图片内容
-    topic.type = (SFLTopicType)[dic[@"type"] integerValue];
-    topic.text = dic[@"text"];
-    topic.width = [dic[@"width"] integerValue];
-    topic.height = [dic[@"height"] integerValue];
-    topic.small_image = dic[@"image0"];
-    topic.middle_image = dic[@"image2"];
-    topic.large_image = dic[@"image1"];
++ (NSDictionary *)mj_replacedKeyFromPropertyName {
+    return @{
+             @"small_image" : @"image0",
+             @"large_image" : @"image1",
+             @"middle_image" : @"image2",
+             @"ID" : @"id",
+             @"top_cmt" : @"top_cmt[0]"
+             };
+}
 
-    // 音频内容
-    topic.voicetime = [dic[@"voicetime"] integerValue];
-    // 视频内容
-    topic.videotime = [dic[@"videotime"] integerValue];
-    
-    topic.playcount = [dic[@"playcount"] integerValue];
-
-    return topic;
++ (NSDictionary *)mj_objectClassInArray {
+    //    return @{@"top_cmt" : [XMGComment class]};
+    return @{@"top_cmt" : [SFLComment class]};
 }
 
 - (NSString *)create_time {
@@ -111,6 +99,13 @@
             CGFloat videoH = width * self.height / self.width;
             _videoFrame = CGRectMake(SFLTopicCellMargin, _cellHeight, width, videoH);
             _cellHeight += videoH + SFLTopicCellMargin;
+        }
+        
+        // 如果有最热评论
+        if (self.top_cmt) {
+            NSString *content = [NSString stringWithFormat:@"%@: %@", self.top_cmt.user.username, self.top_cmt.content];
+            CGFloat contentH = [content boundingRectWithSize:textMaxSize options:NSStringDrawingUsesLineFragmentOrigin attributes:@{NSFontAttributeName : [UIFont systemFontOfSize:14]} context:nil].size.height;
+            _cellHeight += SFLTopicCellTopCmtTitleH + contentH + SFLTopicCellMargin;
         }
         
         _cellHeight += SFLTopicCellMargin + SFLTopicCellBottomBarH;

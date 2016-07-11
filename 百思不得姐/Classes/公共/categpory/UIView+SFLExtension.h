@@ -22,4 +22,5 @@
 @property (nonatomic,assign) CGFloat centerX;
 @property (nonatomic,assign) CGFloat centerY;
 
+- (BOOL)isShowingOnKeyWindow;
 @end

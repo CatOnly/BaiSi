@@ -43,7 +43,7 @@
 - (void)setTopic:(SFLTopic *)topic{
     _topic = topic;
     [self.bgImgView sd_setImageWithURL:[NSURL URLWithString:topic.large_image]];
-    self.playcountLabel.text = [NSString stringWithFormat:@"%zd播放",topic.playcount];
+    self.playcountLabel.text = [NSString stringWithFormat:@"%zd次播放",topic.playcount];
     self.videotimeLabel.text = timeFormatWithSec(topic.videotime);
 
 }

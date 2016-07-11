@@ -22,7 +22,6 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
-    // Initialization code
 }
 
 - (void)setFrame:(CGRect)frame{
@@ -37,7 +36,8 @@
 
 - (void)setRecmdTag:(SFLRecommendTag *)recmdTag{
     _recmdTag = recmdTag;
-    [self.imgListImgV sd_setImageWithURL:[NSURL URLWithString:recmdTag.image_list] placeholderImage:[UIImage imageNamed:@"defaultUserIcon"]];
+    [self.imgListImgV setCircleHeaderWithURLString:recmdTag.image_list];
+    
     self.themeNameLabel.text = recmdTag.theme_name;
     
     NSInteger subNumber = recmdTag.sub_number;

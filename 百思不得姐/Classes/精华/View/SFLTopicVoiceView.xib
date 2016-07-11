@@ -20,48 +20,56 @@
                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="aCx-nb-zta" userLabel="voiceImg">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="242"/>
                 </imageView>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2333播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHM-oa-fSg" userLabel="playcount">
-                    <rect key="frame" x="312" y="0.0" width="63" height="17"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.65525323275862069" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
-                    <nil key="highlightedColor"/>
-                </label>
-                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xht-fg-zdS" userLabel="voicetime">
-                    <rect key="frame" x="336" y="225" width="39" height="17"/>
-                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.66000000000000003" colorSpace="calibratedRGB"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xht-fg-zdS" userLabel="voicetime" customClass="SFLInsertLabel">
+                    <rect key="frame" x="333" y="224" width="42" height="18"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
                     <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
                     <nil key="highlightedColor"/>
                 </label>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wxo-fb-FGR" userLabel="playBtn">
-                    <rect key="frame" x="156" y="89" width="63" height="63"/>
+                    <rect key="frame" x="156" y="194" width="63" height="63"/>
                     <constraints>
                         <constraint firstAttribute="height" constant="63" id="NCd-KG-Vks"/>
                         <constraint firstAttribute="width" constant="63" id="hiw-56-81t"/>
                     </constraints>
-                    <state key="normal" image="playButtonPlay" backgroundImage="playButton"/>
-                    <state key="highlighted" image="playButtonClick"/>
+                    <state key="normal" image="playButtonPlay" backgroundImage="playButtonClick"/>
+                    <state key="highlighted" backgroundImage="playButton"/>
                 </button>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2333播放" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JHM-oa-fSg" userLabel="playcount" customClass="SFLInsertLabel">
+                    <rect key="frame" x="0.0" y="224" width="67" height="18"/>
+                    <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.5" colorSpace="calibratedRGB"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                    <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <color key="backgroundColor" red="0.90196079019999997" green="0.90196079019999997" blue="0.90196079019999997" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="aCx-nb-zta" secondAttribute="trailing" id="3DV-D0-bBX"/>
                 <constraint firstAttribute="trailing" secondItem="Kcv-lZ-ivx" secondAttribute="trailing" id="Ayp-1Z-3Yv"/>
+                <constraint firstAttribute="bottom" secondItem="Wxo-fb-FGR" secondAttribute="bottom" constant="-15" id="Btq-oI-gwI"/>
                 <constraint firstItem="Kcv-lZ-ivx" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="GfC-GV-oCD"/>
                 <constraint firstAttribute="bottom" secondItem="xht-fg-zdS" secondAttribute="bottom" id="JGl-Dz-Z2r"/>
+                <constraint firstItem="JHM-oa-fSg" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Jz8-2x-y4Q"/>
                 <constraint firstAttribute="trailing" secondItem="xht-fg-zdS" secondAttribute="trailing" id="QGg-TB-JuD"/>
                 <constraint firstItem="JHM-oa-fSg" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="bJC-2M-86h"/>
                 <constraint firstItem="aCx-nb-zta" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="dz7-ye-0Bv"/>
                 <constraint firstItem="aCx-nb-zta" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="evA-P9-3MO"/>
-                <constraint firstAttribute="trailing" secondItem="JHM-oa-fSg" secondAttribute="trailing" id="kfx-wN-yRN"/>
+                <constraint firstAttribute="trailing" secondItem="JHM-oa-fSg" secondAttribute="trailing" constant="20" symbolic="YES" id="kfx-wN-yRN"/>
+                <constraint firstAttribute="bottom" secondItem="JHM-oa-fSg" secondAttribute="bottom" id="ovQ-oW-t4F"/>
                 <constraint firstItem="Kcv-lZ-ivx" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="q4i-XL-6xh"/>
                 <constraint firstItem="Wxo-fb-FGR" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="qxg-4W-ovz"/>
                 <constraint firstAttribute="bottom" secondItem="aCx-nb-zta" secondAttribute="bottom" id="ufm-da-mJp"/>
-                <constraint firstItem="Wxo-fb-FGR" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="z6f-IL-7oZ"/>
             </constraints>
             <nil key="simulatedStatusBarMetrics"/>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <variation key="default">
+                <mask key="constraints">
+                    <exclude reference="bJC-2M-86h"/>
+                    <exclude reference="kfx-wN-yRN"/>
+                </mask>
+            </variation>
             <connections>
                 <outlet property="bgImgView" destination="aCx-nb-zta" id="V3O-74-XC5"/>
                 <outlet property="playBtn" destination="Wxo-fb-FGR" id="A3K-th-9S1"/>

@@ -13,4 +13,5 @@
 /** 帖子数据 */
 @property (nonatomic,strong) SFLTopic *topic;
 
++ (instancetype)cell;
 @end

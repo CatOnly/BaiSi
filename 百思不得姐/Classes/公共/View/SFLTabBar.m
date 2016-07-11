@@ -17,7 +17,7 @@
 @implementation SFLTabBar
 
 - (void)layoutSubviews
-{
+{ 
     [super layoutSubviews];
     CGFloat width = self.width;
     CGFloat height = self.height;

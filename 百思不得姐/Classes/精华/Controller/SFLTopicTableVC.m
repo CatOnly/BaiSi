@@ -9,8 +9,10 @@
 #import "SFLTopicTableVC.h"
 #import "SFLTopic.h"
 #import "SFLTopicCell.h"
+#import "SFLCommentVC.h"
 
 #import <AFNetworking.h>
+#import <MJExtension.h>
 #import <MJRefresh.h>
 
 
@@ -19,7 +21,7 @@
 /** UITaleView 类型 */
 @property (nonatomic, assign) SFLTopicType type;
 /** 帖子数据 */
-@property (nonatomic,strong) NSArray *topics;
+@property (nonatomic,strong) NSMutableArray *topics;
 /** 当前页码 */
 @property (nonatomic, assign) NSInteger page;
 /** 当加载下一页数据时需要这个参数 */
@@ -39,15 +41,12 @@ static NSString * const SFLTopicTableVCID = @"topic";
     return t;
 }
 
-- (void)setTopics:(NSArray *)topics{
-    NSMutableArray *array = nil;
-    if (topics.count) {
-        array = [NSMutableArray array];
-        for (NSDictionary *dic in topics) {
-            [array addObject:[SFLTopic topicWithDic:dic]];
-        }
+- (NSMutableArray *)topics
+{
+    if (!_topics) {
+        _topics = [NSMutableArray array];
     }
-    _topics = array;
+    return _topics;
 }
 
 - (void)viewDidLoad {
@@ -111,8 +110,8 @@ static NSString * const SFLTopicTableVCID = @"topic";
         // 存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
 
-        // 字典转模型，并存储到数组中
-        self.topics = responseObject[@"list"];
+        // 字典转模型
+        self.topics = [SFLTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         // 刷新表格
         [self.tableView reloadData];
@@ -123,11 +122,11 @@ static NSString * const SFLTopicTableVCID = @"topic";
         // 重新刷新，页码也变成新的页码
         self.page = 0;
         
-        // 结束上拉
+        // 结束下拉
         [self.tableView.mj_header endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (self.params != params) return;
-        // 结束上拉
+        // 结束下拉
         [self.tableView.mj_header endRefreshing];
     }];
 }
@@ -153,8 +152,8 @@ static NSString * const SFLTopicTableVCID = @"topic";
         // 存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
 
-        // 字典转模型，并存储到数组中
-        self.topics = responseObject[@"list"];
+        // 字典转模型
+        self.topics = [SFLTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
         
         // 刷新表格
         [self.tableView reloadData];
@@ -162,11 +161,11 @@ static NSString * const SFLTopicTableVCID = @"topic";
         // 数据加载成功后，更改页码
         self.page = page;
         
-        // 结束下拉
+        // 结束上拉
         [self.tableView.mj_footer endRefreshing];
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (self.params != params) return;
-        // 结束下拉
+        // 结束上拉
         [self.tableView.mj_footer endRefreshing];
     }];
 
@@ -195,6 +194,12 @@ static NSString * const SFLTopicTableVCID = @"topic";
 - (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     // 取出帖子模型
     return [self.topics[indexPath.row] cellHeight];
+}
+
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    SFLCommentVC *commentVC = [[SFLCommentVC alloc] init];
+    commentVC.topic = self.topics[indexPath.row];
+    [self.navigationController pushViewController:commentVC animated:YES];
 }
 
 @end

@@ -7,9 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+@class SFLComment;
 
 @interface SFLTopic : NSObject
-
+/** id */
+@property (nonatomic, copy) NSString *ID;
 /** 名称 */
 @property (nonatomic, copy) NSString *name;
 /** 头像 */
@@ -47,7 +49,8 @@
 @property (nonatomic, assign) NSInteger videotime;
 /** 播放次数 */
 @property (nonatomic, assign) NSInteger playcount;
-
+/** 最热评论 */
+@property (nonatomic, strong) SFLComment *top_cmt;
 
 
 // 额外的辅助属性
@@ -59,14 +62,9 @@
 @property (nonatomic, assign, readonly) CGRect voiceFrame;
 /** 视频控件的frame */
 @property (nonatomic, assign, readonly) CGRect videoFrame;
-
 /** 图片是否太大 */
 @property (nonatomic, assign) BOOL isBigPicture;
-
 /** 图片的下载进度 */
 @property (nonatomic, assign) CGFloat pictureProgress;
 
-
-
-+ (instancetype)topicWithDic:(NSDictionary *)dic;
 @end

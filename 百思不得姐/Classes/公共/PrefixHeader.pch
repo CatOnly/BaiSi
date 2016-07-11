@@ -14,6 +14,8 @@
 #import "UIView+SFLExtension.h"
 #import "UIBarButtonItem+Extension.h"
 #import "NSDate+SFLExtension.h"
+#import "UIImage+SFLExtension.h"
+#import "UIImageView+SFLExtension.h"
 
 #import "SFLConst.h"
 #import "SFLTools.h"
