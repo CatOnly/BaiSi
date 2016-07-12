@@ -11,6 +11,7 @@
 #import "SFLUser.h"
 
 #import <UIImageView+WebCache.h>
+#import <AVFoundation/AVFoundation.h>
 
 @interface SFLCommentCell()
 
@@ -21,27 +22,46 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *voiceBtn;
 
+/** 播放器 */
+@property (nonatomic, strong) AVPlayerItem *playerItem;
+
 @end
 
 @implementation SFLCommentCell
+
+static BOOL isPlayingCommentVoice;
 
 - (void)setComment:(SFLComment *)comment{
     _comment = comment;
     [self.profileImgView setCircleHeaderWithURLString:comment.user.profile_image];
 
-    
+    // 外观初始化
     NSString *imgName = [comment.user.sex isEqualToString:SFLUserSexMale] ? @"Profile_manIcon" : @"Profile_womanIcon";
     self.sexImgView.image = [UIImage imageNamed:imgName];
     self.contentLabel.text = comment.content;
     self.nameLabel.text = comment.user.username;
     self.likeCountLabel.text = [NSString stringWithFormat:@"%zd",comment.like_count];
+    
+    // 音频播放
+    isPlayingCommentVoice = NO;
     if (comment.voiceuri.length) {
         self.voiceBtn.hidden = NO;
         [self.voiceBtn setTitle:[NSString stringWithFormat:@"%zd''",comment.voicetime] forState:UIControlStateNormal];
+        [self.voiceBtn addTarget:self action:@selector(voiceBtnClick) forControlEvents:UIControlEventTouchUpInside];
     } else {
         self.voiceBtn.hidden = YES;
-
     }
+}
+
+- (void)voiceBtnClick {
+    if(isPlayingCommentVoice){
+        
+        NSLog(@"pause");
+    }else {
+        
+        NSLog(@"play");
+    }
+    isPlayingCommentVoice = !isPlayingCommentVoice;
 }
 
 #pragma mark - MenuController 处理

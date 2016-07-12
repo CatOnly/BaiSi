@@ -19,9 +19,9 @@ CGFloat const SFLTopicCellPictureMaxH = 1000;
 CGFloat const SFLTopicCellPictureBreakH = 250;
 
 /** 精华-Commentcell-文字内容的Y值 */
-CGFloat const SFLCommentCellTextY = 30;
+CGFloat const SFLCommentCellTextY = 40;
 /** 精华-Commentcell-文字的边框宽度 */
-CGFloat const SFLCommentCellMarginW = 120;
+CGFloat const SFLCommentCellMarginW = 110 + 2 * SFLTopicCellMargin;
 /** 精华-Commentcell-声音的高度 */
 CGFloat const SFLCommentCellVoiceH = 20;
 
