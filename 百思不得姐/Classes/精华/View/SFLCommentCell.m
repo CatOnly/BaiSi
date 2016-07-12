@@ -24,12 +24,27 @@
 
 /** 播放器 */
 @property (nonatomic, strong) AVPlayerItem *playerItem;
+/** 播放语音的图片数组 */
+@property (nonatomic, strong) NSArray *voicePlayingBtnImgs;
 
 @end
 
 @implementation SFLCommentCell
 
+static int showingImgIdx;
 static BOOL isPlayingCommentVoice;
+
+- (NSArray *)voicePlayingBtnImgs{
+    if (!_voicePlayingBtnImgs) {
+        NSArray *imgNames = @[@"play-voice-icon-0",@"play-voice-icon-2",@"play-voice-icon-3"];
+        NSMutableArray *imgs = [NSMutableArray array];
+        for (int i; i < imgNames.count; i++) {
+            [imgs addObject:[UIImage imageNamed:imgNames[i]]];
+        }
+        _voicePlayingBtnImgs = imgs;
+    }
+    return _voicePlayingBtnImgs;
+}
 
 - (void)setComment:(SFLComment *)comment{
     _comment = comment;
@@ -68,6 +83,13 @@ static BOOL isPlayingCommentVoice;
     
 }
 
+- (void)updateImage {
+    if (showingImgIdx > self.voicePlayingBtnImgs.count) {
+        showingImgIdx = 0;
+    }
+    self.voiceBtn.imageView.image = self.voicePlayingBtnImgs[showingImgIdx];
+    showingImgIdx++;
+}
 
 #pragma mark - MenuController 处理
 
