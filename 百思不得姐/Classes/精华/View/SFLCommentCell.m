@@ -64,6 +64,11 @@ static BOOL isPlayingCommentVoice;
     isPlayingCommentVoice = !isPlayingCommentVoice;
 }
 
+- (void)playingImg {
+    
+}
+
+
 #pragma mark - MenuController 处理
 
 - (void)setFrame:(CGRect)frame{
