@@ -11,7 +11,7 @@
 #import "SFLPushGuidView.h"
 #import "SFLTopWindow.h"
 
-@interface AppDelegate ()
+@interface AppDelegate ()<UITabBarControllerDelegate>
 
 @end
 
@@ -22,7 +22,9 @@
     // 创建窗口
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     // 设置窗口根控制器
-    self.window.rootViewController = [[SFLTabBarController alloc] init];
+    SFLTabBarController *tabBarC = [[SFLTabBarController alloc] init];
+    tabBarC.delegate = self;
+    self.window.rootViewController = tabBarC;
     // 显示窗口
     [self.window makeKeyAndVisible];
     // 显示引导视图
@@ -53,6 +55,13 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
+}
+
+#pragma mark - UITabBarControllerDelegate
+
+- (void)tabBarController:(UITabBarController *)tabBarController didSelectViewController:(UIViewController *)viewController{
+    // 发出通知
+    [[NSNotificationCenter defaultCenter] postNotificationName:SFLTabBarSelectedNotification object:nil];
 }
 
 @end

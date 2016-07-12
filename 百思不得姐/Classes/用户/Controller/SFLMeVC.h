@@ -8,6 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface SFLMeVC : UIViewController
+@interface SFLMeVC : UITableViewController
 
 @end

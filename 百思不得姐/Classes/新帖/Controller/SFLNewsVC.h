@@ -6,8 +6,8 @@
 //  Copyright © 2016年 Light. All rights reserved.
 //
 
-#import <UIKit/UIKit.h>
+#import "SFLEssenceVC.h"
 
-@interface SFLNewsVC : UIViewController
+@interface SFLNewsVC : SFLEssenceVC
 
 @end

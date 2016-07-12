@@ -93,6 +93,7 @@ static CGFloat const SFLSpringFactor = 8;
 
 - (void)btnClick:(UIButton *)btn {
     [self cancelWithCompletionBlock:^{
+        [SFLoginTool getUID];
         if (btn.tag == 0) {
             SFLLOG(@"发视频");
         } else if (btn.tag == 1) {

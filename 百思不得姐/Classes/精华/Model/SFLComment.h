@@ -24,4 +24,8 @@
 /** 用户 */
 @property (nonatomic, strong) SFLUser *user;
 
+
+// 辅助数据
+/** cell 的高度 */
+@property (nonatomic, assign) CGFloat cellHeight;
 @end

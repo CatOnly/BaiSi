@@ -8,6 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		A41BC8C91D33AB700013B36A /* UIImageView+SFLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8C81D33AB700013B36A /* UIImageView+SFLExtension.m */; };
+		A41BC8CC1D33D6790013B36A /* SFLMeCell.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8CB1D33D6790013B36A /* SFLMeCell.m */; };
+		A41BC8CF1D33E3AF0013B36A /* SFLMeFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8CE1D33E3AF0013B36A /* SFLMeFooterView.m */; };
+		A41BC8D21D33E5F30013B36A /* SFLMeSquare.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8D11D33E5F30013B36A /* SFLMeSquare.m */; };
+		A41BC8D51D33E8AD0013B36A /* SFLMeSquareBtn.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8D41D33E8AD0013B36A /* SFLMeSquareBtn.m */; };
+		A41BC8D81D33F7870013B36A /* SFLWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8D71D33F7870013B36A /* SFLWebVC.m */; };
+		A41BC8DA1D33F7B70013B36A /* SFLWebVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41BC8D91D33F7B70013B36A /* SFLWebVC.xib */; };
+		A41BC8DD1D349E9B0013B36A /* SFLoginTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8DC1D349E9B0013B36A /* SFLoginTool.m */; };
 		A44197A91D2FFC0B003717CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A441974D1D2FFC0B003717CF /* AppDelegate.m */; };
 		A44197AA1D2FFC0B003717CF /* NSDate+SFLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A44197501D2FFC0B003717CF /* NSDate+SFLExtension.m */; };
 		A44197AB1D2FFC0B003717CF /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A44197521D2FFC0B003717CF /* UIBarButtonItem+Extension.m */; };
@@ -75,6 +82,19 @@
 		789AE52B55F3BD87A7285C99 /* Pods-百思不得姐.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-百思不得姐.release.xcconfig"; path = "Pods/Target Support Files/Pods-百思不得姐/Pods-百思不得姐.release.xcconfig"; sourceTree = "<group>"; };
 		A41BC8C71D33AB700013B36A /* UIImageView+SFLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImageView+SFLExtension.h"; sourceTree = "<group>"; };
 		A41BC8C81D33AB700013B36A /* UIImageView+SFLExtension.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImageView+SFLExtension.m"; sourceTree = "<group>"; };
+		A41BC8CA1D33D6790013B36A /* SFLMeCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLMeCell.h; sourceTree = "<group>"; };
+		A41BC8CB1D33D6790013B36A /* SFLMeCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLMeCell.m; sourceTree = "<group>"; };
+		A41BC8CD1D33E3AF0013B36A /* SFLMeFooterView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLMeFooterView.h; sourceTree = "<group>"; };
+		A41BC8CE1D33E3AF0013B36A /* SFLMeFooterView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLMeFooterView.m; sourceTree = "<group>"; };
+		A41BC8D01D33E5F30013B36A /* SFLMeSquare.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLMeSquare.h; sourceTree = "<group>"; };
+		A41BC8D11D33E5F30013B36A /* SFLMeSquare.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLMeSquare.m; sourceTree = "<group>"; };
+		A41BC8D31D33E8AD0013B36A /* SFLMeSquareBtn.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLMeSquareBtn.h; sourceTree = "<group>"; };
+		A41BC8D41D33E8AD0013B36A /* SFLMeSquareBtn.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLMeSquareBtn.m; sourceTree = "<group>"; };
+		A41BC8D61D33F7870013B36A /* SFLWebVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLWebVC.h; sourceTree = "<group>"; };
+		A41BC8D71D33F7870013B36A /* SFLWebVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLWebVC.m; sourceTree = "<group>"; };
+		A41BC8D91D33F7B70013B36A /* SFLWebVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFLWebVC.xib; sourceTree = "<group>"; };
+		A41BC8DB1D349E9B0013B36A /* SFLoginTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLoginTool.h; sourceTree = "<group>"; };
+		A41BC8DC1D349E9B0013B36A /* SFLoginTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLoginTool.m; sourceTree = "<group>"; };
 		A441974C1D2FFC0B003717CF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A441974D1D2FFC0B003717CF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A441974F1D2FFC0B003717CF /* NSDate+SFLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SFLExtension.h"; sourceTree = "<group>"; };
@@ -207,7 +227,7 @@
 			children = (
 				A44197681D2FFC0B003717CF /* 关注 */,
 				A44197831D2FFC0B003717CF /* 新帖 */,
-				A44197891D2FFC0B003717CF /* 用户 */,
+				A44197891D2FFC0B003717CF /* 我的 */,
 				A441978F1D2FFC0B003717CF /* 精华 */,
 				A441974B1D2FFC0B003717CF /* 公共 */,
 			);
@@ -219,14 +239,16 @@
 			children = (
 				A441974C1D2FFC0B003717CF /* AppDelegate.h */,
 				A441974D1D2FFC0B003717CF /* AppDelegate.m */,
+				A441975D1D2FFC0B003717CF /* PrefixHeader.pch */,
 				A441974E1D2FFC0B003717CF /* categpory */,
 				A44197551D2FFC0B003717CF /* Controller */,
-				A441975D1D2FFC0B003717CF /* PrefixHeader.pch */,
+				A44197621D2FFC0B003717CF /* View */,
 				A44197601D2FFC0B003717CF /* SFLConst.h */,
 				A44197611D2FFC0B003717CF /* SFLConst.m */,
 				A48A7A451D30FB020095ED8F /* SFLTools.h */,
 				A48A7A461D30FB020095ED8F /* SFLTools.m */,
-				A44197621D2FFC0B003717CF /* View */,
+				A41BC8DB1D349E9B0013B36A /* SFLoginTool.h */,
+				A41BC8DC1D349E9B0013B36A /* SFLoginTool.m */,
 			);
 			path = "公共";
 			sourceTree = "<group>";
@@ -367,13 +389,14 @@
 			path = View;
 			sourceTree = "<group>";
 		};
-		A44197891D2FFC0B003717CF /* 用户 */ = {
+		A44197891D2FFC0B003717CF /* 我的 */ = {
 			isa = PBXGroup;
 			children = (
 				A441978A1D2FFC0B003717CF /* Controller */,
 				A441978D1D2FFC0B003717CF /* Model */,
 				A441978E1D2FFC0B003717CF /* View */,
 			);
+			name = "我的";
 			path = "用户";
 			sourceTree = "<group>";
 		};
@@ -382,6 +405,9 @@
 			children = (
 				A441978B1D2FFC0B003717CF /* SFLMeVC.h */,
 				A441978C1D2FFC0B003717CF /* SFLMeVC.m */,
+				A41BC8D61D33F7870013B36A /* SFLWebVC.h */,
+				A41BC8D71D33F7870013B36A /* SFLWebVC.m */,
+				A41BC8D91D33F7B70013B36A /* SFLWebVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -389,6 +415,8 @@
 		A441978D1D2FFC0B003717CF /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				A41BC8D01D33E5F30013B36A /* SFLMeSquare.h */,
+				A41BC8D11D33E5F30013B36A /* SFLMeSquare.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -396,6 +424,12 @@
 		A441978E1D2FFC0B003717CF /* View */ = {
 			isa = PBXGroup;
 			children = (
+				A41BC8CA1D33D6790013B36A /* SFLMeCell.h */,
+				A41BC8CB1D33D6790013B36A /* SFLMeCell.m */,
+				A41BC8CD1D33E3AF0013B36A /* SFLMeFooterView.h */,
+				A41BC8CE1D33E3AF0013B36A /* SFLMeFooterView.m */,
+				A41BC8D31D33E8AD0013B36A /* SFLMeSquareBtn.h */,
+				A41BC8D41D33E8AD0013B36A /* SFLMeSquareBtn.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -415,16 +449,16 @@
 			children = (
 				A44197911D2FFC0B003717CF /* SFLEssenceVC.h */,
 				A44197921D2FFC0B003717CF /* SFLEssenceVC.m */,
-				A44197931D2FFC0B003717CF /* SFLRecommendTagsVC.h */,
-				A44197941D2FFC0B003717CF /* SFLRecommendTagsVC.m */,
-				A44197951D2FFC0B003717CF /* SFLShowPictureVC.h */,
-				A44197961D2FFC0B003717CF /* SFLShowPictureVC.m */,
-				A44197971D2FFC0B003717CF /* SFLShowPictureVC.xib */,
 				A44197981D2FFC0B003717CF /* SFLTopicTableVC.h */,
 				A44197991D2FFC0B003717CF /* SFLTopicTableVC.m */,
 				A48A7A591D314F610095ED8F /* SFLCommentVC.h */,
 				A48A7A5A1D314F610095ED8F /* SFLCommentVC.m */,
 				A48A7A5B1D314F610095ED8F /* SFLCommentVC.xib */,
+				A44197931D2FFC0B003717CF /* SFLRecommendTagsVC.h */,
+				A44197941D2FFC0B003717CF /* SFLRecommendTagsVC.m */,
+				A44197951D2FFC0B003717CF /* SFLShowPictureVC.h */,
+				A44197961D2FFC0B003717CF /* SFLShowPictureVC.m */,
+				A44197971D2FFC0B003717CF /* SFLShowPictureVC.xib */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -585,6 +619,7 @@
 				A44197BD1D2FFC0B003717CF /* SFLFriendsVC.xib in Resources */,
 				A44197D01D2FFC0B003717CF /* SFLTopicCell.xib in Resources */,
 				A44197C21D2FFC0B003717CF /* SFLRecommendTypeCell.xib in Resources */,
+				A41BC8DA1D33F7B70013B36A /* SFLWebVC.xib in Resources */,
 				A44197B41D2FFC0B003717CF /* SFLPushGuidView.xib in Resources */,
 				A44197C91D2FFC0B003717CF /* SFLShowPictureVC.xib in Resources */,
 				A44197D21D2FFC0B003717CF /* SFLTopicPictureView.xib in Resources */,
@@ -654,6 +689,7 @@
 			files = (
 				A44197CC1D2FFC0B003717CF /* SFLTopic.m in Sources */,
 				A48A7A581D3134F80095ED8F /* SFLInsertLabel.m in Sources */,
+				A41BC8CC1D33D6790013B36A /* SFLMeCell.m in Sources */,
 				A44197AB1D2FFC0B003717CF /* UIBarButtonItem+Extension.m in Sources */,
 				A44197B71D2FFC0B003717CF /* SFLLoginRegisterVC.m in Sources */,
 				A44197AE1D2FFC0B003717CF /* SFLPublishVC.m in Sources */,
@@ -668,10 +704,12 @@
 				A44197AD1D2FFC0B003717CF /* SFLNavigationController.m in Sources */,
 				A44197D11D2FFC0B003717CF /* SFLTopicPictureView.m in Sources */,
 				A44197C81D2FFC0B003717CF /* SFLShowPictureVC.m in Sources */,
+				A41BC8D21D33E5F30013B36A /* SFLMeSquare.m in Sources */,
 				A44197A91D2FFC0B003717CF /* AppDelegate.m in Sources */,
 				A44197CB1D2FFC0B003717CF /* SFLRecommendTag.m in Sources */,
 				A44197C71D2FFC0B003717CF /* SFLRecommendTagsVC.m in Sources */,
 				A44197BB1D2FFC0B003717CF /* SFLRecommendDisplay.m in Sources */,
+				A41BC8CF1D33E3AF0013B36A /* SFLMeFooterView.m in Sources */,
 				A44197BE1D2FFC0B003717CF /* SFLLoginTextField.m in Sources */,
 				A48A7A421D30E72F0095ED8F /* SFLTopicVoiceView.m in Sources */,
 				A44197B61D2FFC0B003717CF /* SFLFriendsVC.m in Sources */,
@@ -680,6 +718,7 @@
 				A44197AA1D2FFC0B003717CF /* NSDate+SFLExtension.m in Sources */,
 				A44197B91D2FFC0B003717CF /* SFLRecommendVC.m in Sources */,
 				A4B62B381D32846200096DEB /* SFLCommentCell.m in Sources */,
+				A41BC8D81D33F7870013B36A /* SFLWebVC.m in Sources */,
 				A44197B01D2FFC0B003717CF /* SFLTabBarController.m in Sources */,
 				A48A7A4F1D3122A50095ED8F /* SFLUser.m in Sources */,
 				A44197CF1D2FFC0B003717CF /* SFLTopicCell.m in Sources */,
@@ -688,9 +727,11 @@
 				A44197C41D2FFC0B003717CF /* SFLNewsVC.m in Sources */,
 				A44197C11D2FFC0B003717CF /* SFLRecommendTypeCell.m in Sources */,
 				A44197B11D2FFC0B003717CF /* SFLCircleProgressView.m in Sources */,
+				A41BC8D51D33E8AD0013B36A /* SFLMeSquareBtn.m in Sources */,
 				A44197BF1D2FFC0B003717CF /* SFLRecommendDisplayCell.m in Sources */,
 				A44197B21D2FFC0B003717CF /* SFLConst.m in Sources */,
 				A41BC8C91D33AB700013B36A /* UIImageView+SFLExtension.m in Sources */,
+				A41BC8DD1D349E9B0013B36A /* SFLoginTool.m in Sources */,
 				A48A7A471D30FB020095ED8F /* SFLTools.m in Sources */,
 				A4D3FF531D2FFABB0070CB74 /* main.m in Sources */,
 				A48A7A4A1D3100CB0095ED8F /* SFLTopicVideoView.m in Sources */,

@@ -44,7 +44,7 @@
     [self setupChildVC:[[SFLEssenceVC alloc] init] title:@"精华" img:@"tabBar_essence_icon" selectedImg:@"tabBar_essence_click_icon"];
     [self setupChildVC:[[SFLNewsVC alloc] init] title:@"新帖" img:@"tabBar_new_icon" selectedImg:@"tabBar_new_click_icon"];
     [self setupChildVC:[[SFLFriendsVC alloc] init] title:@"关注" img:@"tabBar_friendTrends_icon" selectedImg:@"tabBar_friendTrends_click_icon"];
-    [self setupChildVC:[[SFLMeVC alloc] init] title:@"我" img:@"tabBar_me_icon" selectedImg:@"tabBar_me_click_icon"];
+    [self setupChildVC:[[SFLMeVC alloc] initWithStyle:UITableViewStyleGrouped] title:@"我的" img:@"tabBar_me_icon" selectedImg:@"tabBar_me_click_icon"];
     
     // 更换 TabBar
     [self setValue:[[SFLTabBar alloc] init] forKey:@"tabBar"];

@@ -7,6 +7,7 @@
 //
 
 #import "SFLTopicTableVC.h"
+#import "SFLNewsVC.h"
 #import "SFLTopic.h"
 #import "SFLTopicCell.h"
 #import "SFLCommentVC.h"
@@ -28,6 +29,8 @@
 @property (nonatomic, copy) NSString *maxtime;
 /** 上一次的请求参数 */
 @property (nonatomic, strong) NSDictionary *params;
+/** 上次选中的控制器的索引 */
+@property (nonatomic, assign) NSInteger lastSelectedIndex;
 
 @end
 
@@ -74,7 +77,18 @@ static NSString * const SFLTopicTableVCID = @"topic";
 
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     self.tableView.backgroundColor = [UIColor clearColor];
+    
+    // 监听 TabBar 发出的通知
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(tabBarClick) name:SFLTabBarSelectedNotification object:nil];
+}
 
+- (void)tabBarClick{
+    // 如果选中的是当类的对象且是重复点
+    if (self.view.isShowingOnKeyWindow && self.lastSelectedIndex == self.tabBarController.selectedIndex){
+        [self.tableView.mj_header beginRefreshing];
+    }
+    // 记录本次选中的索引
+    self.lastSelectedIndex = self.tabBarController.selectedIndex;
 }
 
 - (void)setupRefresh {
@@ -95,7 +109,7 @@ static NSString * const SFLTopicTableVCID = @"topic";
 
     // 发送请求给服务器
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
+    params[@"a"] = [self isNewsViewController];
     params[@"c"] = @"data";
     params[@"type"] = @(self.type);
 
@@ -135,7 +149,7 @@ static NSString * const SFLTopicTableVCID = @"topic";
 - (void)loadMoreTopics{
     // 发送请求给服务器
     NSMutableDictionary *params = [NSMutableDictionary dictionary];
-    params[@"a"] = @"list";
+    params[@"a"] = [self isNewsViewController];
     params[@"c"] = @"data";
     params[@"type"] = @(self.type);
     params[@"maxtime"] = self.maxtime;
@@ -171,6 +185,11 @@ static NSString * const SFLTopicTableVCID = @"topic";
 
 }
 
+#pragma mark - 是否是新帖
+- (NSString *)isNewsViewController{
+    return [self.parentViewController isKindOfClass:[SFLNewsVC class]] ? @"newlist" :@"list";
+}
+
 #pragma mark - Table view data source
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
     return 1;
@@ -186,7 +205,7 @@ static NSString * const SFLTopicTableVCID = @"topic";
 
     SFLTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:SFLTopicTableVCID forIndexPath:indexPath];
     cell.topic = self.topics[indexPath.row];
-    
+    cell.tableVC = self;
     return cell;
 }
 

@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *imgListImgV;
 @property (weak, nonatomic) IBOutlet UILabel *themeNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *subNumberLabel;
+@property (weak, nonatomic) IBOutlet UIButton *subscribPeopleBtn;
 
 @end
 
@@ -22,6 +23,12 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    self.selectionStyle = UITableViewCellSelectionStyleNone;
+    [self.subscribPeopleBtn addTarget:self action:@selector(subscribPeopleBtnClick) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)subscribPeopleBtnClick{
+    [SFLoginTool getUID];
 }
 
 - (void)setFrame:(CGRect)frame{

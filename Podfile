@@ -7,4 +7,5 @@ target '百思不得姐' do
     pod 'MJRefresh'
     pod 'MJExtension'
     pod 'pop'
+    pod 'NJKWebViewProgress'
 end

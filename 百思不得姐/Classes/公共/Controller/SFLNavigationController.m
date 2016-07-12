@@ -17,7 +17,10 @@
 }
 
 - (void)viewDidLoad{
+    [super viewDidLoad];
 //    [self.navigationBar setBackgroundImage:[UIImage imageNamed:@"navigationbarBackgroundWhite"] forBarMetrics:UIBarMetricsDefault];
+    // 滑动移除控制器失效
+    self.interactivePopGestureRecognizer.delegate = nil;
 }
 
 // 拦截所有 push 进来的控制器

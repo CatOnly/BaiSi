@@ -64,6 +64,7 @@
             <connections>
                 <outlet property="imgListImgV" destination="u91-lP-tDC" id="Bdf-RJ-qZ0"/>
                 <outlet property="subNumberLabel" destination="PpX-iQ-qrW" id="SN2-2t-ALh"/>
+                <outlet property="subscribPeopleBtn" destination="ZmD-31-6wq" id="0Mb-bF-3L4"/>
                 <outlet property="themeNameLabel" destination="Glf-KT-DFi" id="lKq-8c-3UH"/>
             </connections>
             <point key="canvasLocation" x="336" y="318"/>

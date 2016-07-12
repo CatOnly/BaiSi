@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -20,37 +19,23 @@
                         <constraints>
                             <constraint firstAttribute="width" constant="40" id="1GK-Nq-HE3"/>
                             <constraint firstAttribute="height" constant="40" id="m9q-eJ-hFX"/>
-                            <constraint firstAttribute="height" constant="40" id="srK-QM-tOv"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="srK-QM-tOv"/>
-                            </mask>
-                        </variation>
                     </imageView>
                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Profile_manIcon" translatesAutoresizingMaskIntoConstraints="NO" id="2j9-h2-1Gv" userLabel="sex">
-                        <rect key="frame" x="50" y="10" width="20" height="14"/>
+                        <rect key="frame" x="50" y="10" width="20" height="20"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="20" id="vl1-pj-7IE"/>
                             <constraint firstAttribute="height" constant="20" id="yBO-KI-56f"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="yBO-KI-56f"/>
-                            </mask>
-                        </variation>
                     </imageView>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cWE-BB-F2z" userLabel="name">
-                        <rect key="frame" x="70" y="10" width="33" height="14"/>
+                        <rect key="frame" x="70" y="10" width="33" height="20"/>
                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                         <color key="textColor" red="0.60000002379999995" green="0.60000002379999995" blue="0.60000002379999995" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dua-5N-na8" userLabel="comment">
-                        <rect key="frame" x="60" y="24" width="200" height="22"/>
-                        <constraints>
-                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="22" id="FPP-0b-o7s"/>
-                        </constraints>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dua-5N-na8" userLabel="comment">
+                        <rect key="frame" x="60" y="30" width="200" height="17"/>
                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                         <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
@@ -71,7 +56,7 @@
                         <nil key="highlightedColor"/>
                     </label>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N8W-nc-koJ" userLabel="voiceBtn">
-                        <rect key="frame" x="60" y="24" width="62" height="22"/>
+                        <rect key="frame" x="60" y="30" width="62" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="12"/>
                         <inset key="imageEdgeInsets" minX="42" minY="0.0" maxX="0.0" maxY="0.0"/>
                         <state key="normal" title="12''" image="play-voice-stop" backgroundImage="play-voice-bg">
@@ -81,13 +66,11 @@
                     </button>
                 </subviews>
                 <constraints>
-                    <constraint firstAttribute="bottomMargin" secondItem="S5D-P7-iCA" secondAttribute="bottom" constant="-2" id="8bJ-iV-Nid"/>
                     <constraint firstItem="2j9-h2-1Gv" firstAttribute="top" secondItem="S5D-P7-iCA" secondAttribute="top" id="C3B-Fr-gBA"/>
                     <constraint firstItem="TMe-pM-Bkd" firstAttribute="top" secondItem="NLx-sx-tfL" secondAttribute="bottom" id="GBZ-Fw-F6D"/>
                     <constraint firstItem="2j9-h2-1Gv" firstAttribute="leading" secondItem="S5D-P7-iCA" secondAttribute="trailing" id="Gqz-fI-leW"/>
                     <constraint firstItem="N8W-nc-koJ" firstAttribute="top" secondItem="dua-5N-na8" secondAttribute="top" id="Ih3-w6-XME"/>
                     <constraint firstItem="cWE-BB-F2z" firstAttribute="bottom" secondItem="2j9-h2-1Gv" secondAttribute="bottom" id="MCh-B0-CGt"/>
-                    <constraint firstAttribute="bottom" secondItem="dua-5N-na8" secondAttribute="bottom" constant="10" id="Nbs-j9-Vea"/>
                     <constraint firstItem="S5D-P7-iCA" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="RoS-I9-CPf"/>
                     <constraint firstItem="TMe-pM-Bkd" firstAttribute="trailing" secondItem="NLx-sx-tfL" secondAttribute="trailing" id="ZmI-G0-dp5"/>
                     <constraint firstItem="N8W-nc-koJ" firstAttribute="leading" secondItem="dua-5N-na8" secondAttribute="leading" id="apt-Z9-JUu"/>

@@ -64,8 +64,8 @@ static NSString * const SFLCommentCellID = @"comment";
     self.tableView.separatorStyle = UITableViewCellSeparatorStyleNone;
     
     // cell 高度自适应设置 iOS 8.0「两个缺一不可」
-    self.tableView.estimatedRowHeight = 70;
-    self.tableView.rowHeight = UITableViewAutomaticDimension;
+//    self.tableView.estimatedRowHeight = 70;
+//    self.tableView.rowHeight = UITableViewAutomaticDimension;
     
     // cell 注册
     [self.tableView registerNib:[UINib nibWithNibName:NSStringFromClass([SFLCommentCell class]) bundle:nil] forCellReuseIdentifier:SFLCommentCellID];
@@ -130,6 +130,12 @@ static NSString * const SFLCommentCellID = @"comment";
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params  progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        // 如果没有数据
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            [self.tableView.mj_header endRefreshing];
+            return;
+        }
+
         // 最热评论
         self.hotComments = [SFLComment mj_objectArrayWithKeyValuesArray:responseObject[@"hot"]];
         // 最新评论
@@ -163,6 +169,11 @@ static NSString * const SFLCommentCellID = @"comment";
     [self.manager GET:@"http://api.budejie.com/api/api_open.php" parameters:params  progress:^(NSProgress * _Nonnull downloadProgress) {
         
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        // 如果没有数据
+        if (![responseObject isKindOfClass:[NSDictionary class]]) {
+            [self.tableView.mj_footer endRefreshing];
+            return;
+        }
         NSArray *newComments = [SFLComment mj_objectArrayWithKeyValuesArray:responseObject[@"data"]];
         [self.latestComments addObjectsFromArray:newComments];
         // 页码
@@ -204,7 +215,6 @@ static NSString * const SFLCommentCellID = @"comment";
 }
 
 #pragma mark - MenuItem 处理
-
 - (void)ding:(UIMenuController *)menu{
     NSIndexPath *indexPath = [self.tableView indexPathForSelectedRow];
     SFLComment *comment = [self commentInIndexPath:indexPath];
@@ -274,6 +284,12 @@ static NSString * const SFLCommentCellID = @"comment";
     cell.comment = [self commentInIndexPath:indexPath];
     return cell;
 }
+
+- (CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
+    // 取出帖子模型
+    return [[self commentInIndexPath:indexPath] cellHeight];
+}
+
 
 - (UIView *)tableView:(UITableView *)tableView viewForHeaderInSection:(NSInteger)section{
     // 先从缓存池中找header

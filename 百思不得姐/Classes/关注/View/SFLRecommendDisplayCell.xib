@@ -71,6 +71,7 @@
                 <outlet property="fansCountLabel" destination="A2g-Rm-uIf" id="iFX-uM-SZy"/>
                 <outlet property="headerImgV" destination="s3M-O5-tX6" id="hWb-pL-awE"/>
                 <outlet property="screenNameLabel" destination="sF1-Vf-R3b" id="8rU-AE-cAI"/>
+                <outlet property="subscribeBtn" destination="vCP-xp-E2J" id="6kJ-em-1Go"/>
             </connections>
             <point key="canvasLocation" x="369" y="426.5"/>
         </tableViewCell>

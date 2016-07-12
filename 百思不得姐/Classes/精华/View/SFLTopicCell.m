@@ -8,9 +8,12 @@
 
 #import "SFLTopicCell.h"
 #import "SFLTopic.h"
+#import "SFLTopicTableVC.h"
+
 #import "SFLTopicPictureView.h"
 #import "SFLTopicVoiceView.h"
 #import "SFLTopicVideoView.h"
+#import "SFLCommentVC.h"
 #import "SFLComment.h"
 #import "SFLUser.h"
 
@@ -21,16 +24,13 @@
 @property (weak, nonatomic) IBOutlet UIImageView *profileImageView;
 @property (weak, nonatomic) IBOutlet UILabel *nameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *createTimeLabel;
-
 @property (weak, nonatomic) IBOutlet UIImageView *sinaVView;
-
 @property (weak, nonatomic) IBOutlet UIButton *dingButton;
 @property (weak, nonatomic) IBOutlet UIButton *caiButton;
 @property (weak, nonatomic) IBOutlet UIButton *shareButton;
 @property (weak, nonatomic) IBOutlet UIButton *commentButton;
 /** 帖子的文字内容 */
 @property (weak, nonatomic) IBOutlet UILabel *text_label;
-
 /** 图片帖子中间的内容 */
 @property (nonatomic,weak) SFLTopicPictureView *pictureView;
 /** 声音帖子内容 */
@@ -56,6 +56,12 @@
     UIImageView *bgImgView = [[UIImageView alloc] init];
     bgImgView.image = [UIImage imageNamed:@"mainCellBackground"];
     self.backgroundView = bgImgView;
+    
+    // btn 设置
+    [self.dingButton addTarget:self action:@selector(dingBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.caiButton addTarget:self action:@selector(caiBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.shareButton addTarget:self action:@selector(shareBtnClick) forControlEvents:UIControlEventTouchUpInside];
+    [self.commentButton addTarget:self action:@selector(commentBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
 - (void)setFrame:(CGRect)frame{
@@ -157,8 +163,36 @@
     [button setTitle:placeholder forState:UIControlStateNormal];
 }
 - (IBAction)more:(id)sender {
-    UIActionSheet *sheet = [[UIActionSheet alloc] initWithTitle:nil  delegate:nil cancelButtonTitle:@"取消" destructiveButtonTitle:@"举报" otherButtonTitles:@"收藏", nil];
-    [sheet showInView:self.window];
+    UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
+    UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"style:UIAlertActionStyleCancel handler:nil];
+    UIAlertAction *deleteAction = [UIAlertAction actionWithTitle:@"举报"style:UIAlertActionStyleDestructive handler:nil];
+    UIAlertAction *archiveAction = [UIAlertAction actionWithTitle:@"收藏"style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [SFLoginTool getUID];
+    }];
+    
+    [alertController addAction:cancelAction];
+    [alertController addAction:deleteAction];
+    [alertController addAction:archiveAction];
+    [self.tableVC presentViewController:alertController animated:YES completion:nil];
+}
+
+#pragma mark - 低栏四按钮设置
+- (void)dingBtnClick{
+    self.caiButton.enabled = NO;
+}
+
+- (void)caiBtnClick{
+    self.dingButton.enabled = NO;
+}
+
+- (void)shareBtnClick{
+    
+}
+
+- (void)commentBtnClick{
+    SFLCommentVC *commentVC = [[SFLCommentVC alloc] init];
+    commentVC.topic = self.topic;
+    [self.tableVC.navigationController pushViewController:commentVC animated:YES];
 }
 
 @end

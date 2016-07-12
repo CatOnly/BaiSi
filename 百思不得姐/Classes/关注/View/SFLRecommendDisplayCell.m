@@ -16,6 +16,7 @@
 @property (weak, nonatomic) IBOutlet UIImageView *headerImgV;
 @property (weak, nonatomic) IBOutlet UILabel *screenNameLabel;
 @property (weak, nonatomic) IBOutlet UILabel *fansCountLabel;
+@property (weak, nonatomic) IBOutlet UIButton *subscribeBtn;
 
 @end
 
@@ -36,6 +37,11 @@
 
 - (void)awakeFromNib {
     [super awakeFromNib];
+    [self.subscribeBtn addTarget:self action:@selector(subcribeClick) forControlEvents:UIControlEventTouchUpInside];
+}
+
+- (void)subcribeClick{
+    [SFLoginTool getUID];
 }
 
 - (void)setSelected:(BOOL)selected animated:(BOOL)animated {

@@ -28,8 +28,7 @@
 }
 
 - (IBAction)loginRegister:(id)sender {
-    SFLLoginRegisterVC *login = [[SFLLoginRegisterVC alloc] init];
-    [self presentViewController:login animated:YES completion:nil];
+    [SFLoginTool getUID];
 }
 
 @end
