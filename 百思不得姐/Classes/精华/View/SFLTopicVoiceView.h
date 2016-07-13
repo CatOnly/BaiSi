@@ -8,10 +8,11 @@
 
 #import <UIKit/UIKit.h>
 @class SFLTopic;
+
 @interface SFLTopicVoiceView : UIView
 
 /** 帖子数据 */
-@property (nonatomic,strong) SFLTopic *topic;
+@property (nonatomic, strong) SFLTopic *topic;
 
 + (instancetype)voiceView;
 

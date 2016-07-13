@@ -13,8 +13,5 @@
 /** 帖子数据 */
 @property (nonatomic,strong) SFLTopic *topic;
 
-/** cell 的 tableView */
-@property (nonatomic,weak) UITableViewController *tableVC;
-
 + (instancetype)cell;
 @end

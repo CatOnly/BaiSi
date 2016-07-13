@@ -28,7 +28,6 @@
 }
 
 + (NSDictionary *)mj_objectClassInArray {
-    //    return @{@"top_cmt" : [XMGComment class]};
     return @{@"top_cmt" : [SFLComment class]};
 }
 

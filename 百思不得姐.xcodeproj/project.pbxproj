@@ -15,6 +15,9 @@
 		A41BC8D81D33F7870013B36A /* SFLWebVC.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8D71D33F7870013B36A /* SFLWebVC.m */; };
 		A41BC8DA1D33F7B70013B36A /* SFLWebVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41BC8D91D33F7B70013B36A /* SFLWebVC.xib */; };
 		A41BC8DD1D349E9B0013B36A /* SFLoginTool.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8DC1D349E9B0013B36A /* SFLoginTool.m */; };
+		A41BC8E61D35507B0013B36A /* VideoPlayView.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8E21D35507B0013B36A /* VideoPlayView.m */; };
+		A41BC8E71D35507B0013B36A /* VideoPlayView.xib in Resources */ = {isa = PBXBuildFile; fileRef = A41BC8E31D35507B0013B36A /* VideoPlayView.xib */; };
+		A41BC8E81D35507B0013B36A /* FullViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = A41BC8E51D35507B0013B36A /* FullViewController.m */; };
 		A44197A91D2FFC0B003717CF /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = A441974D1D2FFC0B003717CF /* AppDelegate.m */; };
 		A44197AA1D2FFC0B003717CF /* NSDate+SFLExtension.m in Sources */ = {isa = PBXBuildFile; fileRef = A44197501D2FFC0B003717CF /* NSDate+SFLExtension.m */; };
 		A44197AB1D2FFC0B003717CF /* UIBarButtonItem+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = A44197521D2FFC0B003717CF /* UIBarButtonItem+Extension.m */; };
@@ -95,6 +98,11 @@
 		A41BC8D91D33F7B70013B36A /* SFLWebVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = SFLWebVC.xib; sourceTree = "<group>"; };
 		A41BC8DB1D349E9B0013B36A /* SFLoginTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SFLoginTool.h; sourceTree = "<group>"; };
 		A41BC8DC1D349E9B0013B36A /* SFLoginTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SFLoginTool.m; sourceTree = "<group>"; };
+		A41BC8E11D35507B0013B36A /* VideoPlayView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VideoPlayView.h; sourceTree = "<group>"; };
+		A41BC8E21D35507B0013B36A /* VideoPlayView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VideoPlayView.m; sourceTree = "<group>"; };
+		A41BC8E31D35507B0013B36A /* VideoPlayView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = VideoPlayView.xib; sourceTree = "<group>"; };
+		A41BC8E41D35507B0013B36A /* FullViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FullViewController.h; sourceTree = "<group>"; };
+		A41BC8E51D35507B0013B36A /* FullViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FullViewController.m; sourceTree = "<group>"; };
 		A441974C1D2FFC0B003717CF /* AppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		A441974D1D2FFC0B003717CF /* AppDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		A441974F1D2FFC0B003717CF /* NSDate+SFLExtension.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSDate+SFLExtension.h"; sourceTree = "<group>"; };
@@ -222,12 +230,28 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		A41BC8E01D35502A0013B36A /* Tools */ = {
+			isa = PBXGroup;
+			children = (
+				A48A7A451D30FB020095ED8F /* SFLTools.h */,
+				A48A7A461D30FB020095ED8F /* SFLTools.m */,
+				A41BC8DB1D349E9B0013B36A /* SFLoginTool.h */,
+				A41BC8DC1D349E9B0013B36A /* SFLoginTool.m */,
+				A41BC8E11D35507B0013B36A /* VideoPlayView.h */,
+				A41BC8E21D35507B0013B36A /* VideoPlayView.m */,
+				A41BC8E31D35507B0013B36A /* VideoPlayView.xib */,
+				A41BC8E41D35507B0013B36A /* FullViewController.h */,
+				A41BC8E51D35507B0013B36A /* FullViewController.m */,
+			);
+			name = Tools;
+			sourceTree = "<group>";
+		};
 		A441974A1D2FFC0B003717CF /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				A44197891D2FFC0B003717CF /* 我的 */,
 				A44197681D2FFC0B003717CF /* 关注 */,
 				A44197831D2FFC0B003717CF /* 新帖 */,
-				A44197891D2FFC0B003717CF /* 我的 */,
 				A441978F1D2FFC0B003717CF /* 精华 */,
 				A441974B1D2FFC0B003717CF /* 公共 */,
 			);
@@ -240,15 +264,12 @@
 				A441974C1D2FFC0B003717CF /* AppDelegate.h */,
 				A441974D1D2FFC0B003717CF /* AppDelegate.m */,
 				A441975D1D2FFC0B003717CF /* PrefixHeader.pch */,
+				A44197601D2FFC0B003717CF /* SFLConst.h */,
+				A44197611D2FFC0B003717CF /* SFLConst.m */,
 				A441974E1D2FFC0B003717CF /* categpory */,
 				A44197551D2FFC0B003717CF /* Controller */,
 				A44197621D2FFC0B003717CF /* View */,
-				A44197601D2FFC0B003717CF /* SFLConst.h */,
-				A44197611D2FFC0B003717CF /* SFLConst.m */,
-				A48A7A451D30FB020095ED8F /* SFLTools.h */,
-				A48A7A461D30FB020095ED8F /* SFLTools.m */,
-				A41BC8DB1D349E9B0013B36A /* SFLoginTool.h */,
-				A41BC8DC1D349E9B0013B36A /* SFLoginTool.m */,
+				A41BC8E01D35502A0013B36A /* Tools */,
 			);
 			path = "公共";
 			sourceTree = "<group>";
@@ -622,6 +643,7 @@
 				A41BC8DA1D33F7B70013B36A /* SFLWebVC.xib in Resources */,
 				A44197B41D2FFC0B003717CF /* SFLPushGuidView.xib in Resources */,
 				A44197C91D2FFC0B003717CF /* SFLShowPictureVC.xib in Resources */,
+				A41BC8E71D35507B0013B36A /* VideoPlayView.xib in Resources */,
 				A44197D21D2FFC0B003717CF /* SFLTopicPictureView.xib in Resources */,
 				A48A7A441D30E7460095ED8F /* SFLTopicVoiceView.xib in Resources */,
 				A4B62B391D32846200096DEB /* SFLCommentCell.xib in Resources */,
@@ -699,6 +721,7 @@
 				A48A7A521D31234C0095ED8F /* SFLComment.m in Sources */,
 				A44197C31D2FFC0B003717CF /* SFLVerticalBtn.m in Sources */,
 				A44197CA1D2FFC0B003717CF /* SFLTopicTableVC.m in Sources */,
+				A41BC8E61D35507B0013B36A /* VideoPlayView.m in Sources */,
 				A44197C61D2FFC0B003717CF /* SFLEssenceVC.m in Sources */,
 				A44197BC1D2FFC0B003717CF /* SFLRecommendType.m in Sources */,
 				A44197AD1D2FFC0B003717CF /* SFLNavigationController.m in Sources */,
@@ -707,6 +730,7 @@
 				A41BC8D21D33E5F30013B36A /* SFLMeSquare.m in Sources */,
 				A44197A91D2FFC0B003717CF /* AppDelegate.m in Sources */,
 				A44197CB1D2FFC0B003717CF /* SFLRecommendTag.m in Sources */,
+				A41BC8E81D35507B0013B36A /* FullViewController.m in Sources */,
 				A44197C71D2FFC0B003717CF /* SFLRecommendTagsVC.m in Sources */,
 				A44197BB1D2FFC0B003717CF /* SFLRecommendDisplay.m in Sources */,
 				A41BC8CF1D33E3AF0013B36A /* SFLMeFooterView.m in Sources */,

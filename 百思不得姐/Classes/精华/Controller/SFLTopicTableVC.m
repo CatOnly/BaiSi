@@ -120,24 +120,17 @@ static NSString * const SFLTopicTableVCID = @"topic";
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 请求过期，params已经有了新值，禁止显示，先存储下来
         if (self.params != params) return;
-        
         // 存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
-
         // 字典转模型
         self.topics = [SFLTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        
         // 刷新表格
         [self.tableView reloadData];
-
-        // 刷新表格
-        [self.tableView reloadData];
-        
         // 重新刷新，页码也变成新的页码
         self.page = 0;
-        
         // 结束下拉
         [self.tableView.mj_header endRefreshing];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (self.params != params) return;
         // 结束下拉
@@ -162,21 +155,17 @@ static NSString * const SFLTopicTableVCID = @"topic";
     } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
         // 请求过期，params已经有了新值，禁止显示，先存储下来
         if (self.params != params) return;
-
         // 存储maxtime
         self.maxtime = responseObject[@"info"][@"maxtime"];
-
         // 字典转模型
         self.topics = [SFLTopic mj_objectArrayWithKeyValuesArray:responseObject[@"list"]];
-        
         // 刷新表格
         [self.tableView reloadData];
-        
         // 数据加载成功后，更改页码
         self.page = page;
-        
         // 结束上拉
         [self.tableView.mj_footer endRefreshing];
+        
     } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
         if (self.params != params) return;
         // 结束上拉
@@ -205,7 +194,7 @@ static NSString * const SFLTopicTableVCID = @"topic";
 
     SFLTopicCell *cell = [tableView dequeueReusableCellWithIdentifier:SFLTopicTableVCID forIndexPath:indexPath];
     cell.topic = self.topics[indexPath.row];
-    cell.tableVC = self;
+    
     return cell;
 }
 

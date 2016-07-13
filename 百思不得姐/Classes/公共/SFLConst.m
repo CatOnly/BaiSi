@@ -35,3 +35,7 @@ CGFloat const SFLTopicCellTopCmtTitleH = 20;
 
 /** tabBarVC 被点击的通知 */
 NSString * const SFLTabBarSelectedNotification = @"SFLTabBarSelectedNotification";
+
+/** SFLTopicCell 正在播放流媒体的通知 */
+NSString * const SFLTopicCellPlayingMediaNotification = @"SFLTopicCellPlayingMediaNotification";
+

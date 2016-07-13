@@ -22,29 +22,15 @@
 @property (weak, nonatomic) IBOutlet UILabel *likeCountLabel;
 @property (weak, nonatomic) IBOutlet UIButton *voiceBtn;
 
-/** 播放器 */
-@property (nonatomic, strong) AVPlayerItem *playerItem;
-/** 播放语音的图片数组 */
-@property (nonatomic, strong) NSArray *voicePlayingBtnImgs;
-
+/** 正在显示的下标 */
+@property (nonatomic, assign) int showingImgIdx;
+/** 音频播放 */
+@property (nonatomic, strong) AVPlayer *player;
 @end
 
+static SFLCommentCell *currentPlayingVoiceCell;
+
 @implementation SFLCommentCell
-
-static int showingImgIdx;
-static BOOL isPlayingCommentVoice;
-
-- (NSArray *)voicePlayingBtnImgs{
-    if (!_voicePlayingBtnImgs) {
-        NSArray *imgNames = @[@"play-voice-icon-0",@"play-voice-icon-2",@"play-voice-icon-3"];
-        NSMutableArray *imgs = [NSMutableArray array];
-        for (int i; i < imgNames.count; i++) {
-            [imgs addObject:[UIImage imageNamed:imgNames[i]]];
-        }
-        _voicePlayingBtnImgs = imgs;
-    }
-    return _voicePlayingBtnImgs;
-}
 
 - (void)setComment:(SFLComment *)comment{
     _comment = comment;
@@ -58,9 +44,9 @@ static BOOL isPlayingCommentVoice;
     self.likeCountLabel.text = [NSString stringWithFormat:@"%zd",comment.like_count];
     
     // 音频播放
-    isPlayingCommentVoice = NO;
     if (comment.voiceuri.length) {
         self.voiceBtn.hidden = NO;
+        self.voiceBtn.selected = NO;
         [self.voiceBtn setTitle:[NSString stringWithFormat:@"%zd''",comment.voicetime] forState:UIControlStateNormal];
         [self.voiceBtn addTarget:self action:@selector(voiceBtnClick) forControlEvents:UIControlEventTouchUpInside];
     } else {
@@ -69,26 +55,41 @@ static BOOL isPlayingCommentVoice;
 }
 
 - (void)voiceBtnClick {
-    if(isPlayingCommentVoice){
-        
-        NSLog(@"pause");
-    }else {
-        
-        NSLog(@"play");
+    if (currentPlayingVoiceCell == nil) {
+        SFLLOG(@"播放 - 无 正在播放的");
+        [self playVoice];
+    } else if (currentPlayingVoiceCell == self) {
+        SFLLOG(@"停止 - 自己 是 正在播放的");
+        [self pauseVoice];
+    } else {
+        SFLLOG(@"停止 - 自己 不是 正在播放的");
+        [currentPlayingVoiceCell pauseVoice];
+        SFLLOG(@"播放 - 有 正在播放，关了 播新的");
+        [self playVoice];
     }
-    isPlayingCommentVoice = !isPlayingCommentVoice;
+
 }
 
-- (void)playingImg {
-    
+- (void)playVoice {
+    self.player = [AVPlayer playerWithURL:[NSURL URLWithString:self.comment.voiceuri]];
+    [self.player play];
+    self.voiceBtn.selected = YES;
+    currentPlayingVoiceCell = self;
+    dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(self.comment.voicetime * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+        // 同一个 player 说明完整的播放完了，关掉显示
+        if (currentPlayingVoiceCell.player == self.player){
+            self.voiceBtn.selected = NO;
+            currentPlayingVoiceCell = nil;
+            SFLLOG(@"停止 - 时间到");
+        }
+    });
 }
 
-- (void)updateImage {
-    if (showingImgIdx > self.voicePlayingBtnImgs.count) {
-        showingImgIdx = 0;
-    }
-    self.voiceBtn.imageView.image = self.voicePlayingBtnImgs[showingImgIdx];
-    showingImgIdx++;
+- (void)pauseVoice{
+    [self.player pause];
+    _player = nil;
+    self.voiceBtn.selected = NO;
+    currentPlayingVoiceCell = nil;
 }
 
 #pragma mark - MenuController 处理

@@ -62,7 +62,10 @@
                         <state key="normal" title="12''" image="play-voice-stop" backgroundImage="play-voice-bg">
                             <color key="titleColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         </state>
-                        <state key="highlighted" backgroundImage="play-voice-bg-select"/>
+                        <state key="disabled" image="play-voice-icon-2"/>
+                        <state key="selected" image="play-voice-icon-3"/>
+                        <state key="highlighted" image="play-voice-icon-0" backgroundImage="play-voice-bg-select"/>
+                        <state key="focused" image="play-voice-icon-3"/>
                     </button>
                 </subviews>
                 <constraints>
@@ -102,6 +105,9 @@
         <image name="commentLikeButtonClick" width="19" height="19"/>
         <image name="play-voice-bg" width="62" height="22"/>
         <image name="play-voice-bg-select" width="74" height="24"/>
+        <image name="play-voice-icon-0" width="15" height="15"/>
+        <image name="play-voice-icon-2" width="15" height="15"/>
+        <image name="play-voice-icon-3" width="15" height="15"/>
         <image name="play-voice-stop" width="12" height="12"/>
     </resources>
 </document>

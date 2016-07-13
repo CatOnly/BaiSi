@@ -14,6 +14,7 @@
 #import "SFLCommentCell.h"
 #import "SFLUser.h"
 
+#import <AVFoundation/AVFoundation.h>
 #import <AFNetworking.h>
 #import <MJRefresh.h>
 #import <MJExtension.h>
@@ -35,6 +36,7 @@
 @property (nonatomic, assign) NSInteger page;
 /** 管理者 */
 @property (nonatomic, strong) AFHTTPSessionManager *manager;
+
 @end
 
 static NSString * const SFLCommentCellID = @"comment";
@@ -243,6 +245,7 @@ static NSString * const SFLCommentCellID = @"comment";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath{
+    // 菜单弹出框
     UIMenuController *menu = [UIMenuController sharedMenuController];
     if (menu.isMenuVisible) {
         [menu setMenuVisible:NO animated:YES];

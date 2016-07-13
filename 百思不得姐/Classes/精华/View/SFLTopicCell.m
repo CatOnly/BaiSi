@@ -42,7 +42,6 @@
 /** 最热评论内容*/
 @property (weak, nonatomic) IBOutlet UILabel *topCmtContentLabel;
 
-
 @end
 
 @implementation SFLTopicCell
@@ -64,13 +63,7 @@
     [self.commentButton addTarget:self action:@selector(commentBtnClick) forControlEvents:UIControlEventTouchUpInside];
 }
 
-- (void)setFrame:(CGRect)frame{
-    frame.origin.x = SFLTopicCellMargin;
-    frame.origin.y += SFLTopicCellMargin;
-    frame.size.width  -= SFLTopicCellMargin * 2;
-    frame.size.height = self.topic.cellHeight - SFLTopicCellMargin;
-    [super setFrame:frame];
-}
+#pragma mark - 懒加载代码
 
 - (SFLTopicPictureView *)pictureView{
     if (_pictureView == nil) {
@@ -100,6 +93,15 @@
 }
 
 
+#pragma mark - set 方法修改
+
+- (void)setFrame:(CGRect)frame{
+    frame.origin.x = SFLTopicCellMargin;
+    frame.origin.y += SFLTopicCellMargin;
+    frame.size.width  -= SFLTopicCellMargin * 2;
+    frame.size.height = self.topic.cellHeight - SFLTopicCellMargin;
+    [super setFrame:frame];
+}
 
 - (void)setTopic:(SFLTopic *)topic{
     _topic = topic;
@@ -151,7 +153,6 @@
     } else {
         self.topCmtView.hidden = YES;
     }
-
 }
 
 - (void)setupButtonTitle:(UIButton *)button count:(NSInteger)count placeholder:(NSString *)placeholder {
@@ -162,6 +163,8 @@
     }
     [button setTitle:placeholder forState:UIControlStateNormal];
 }
+
+// 菜单弹出
 - (IBAction)more:(id)sender {
     UIAlertController *alertController = [UIAlertController alertControllerWithTitle:nil message:nil preferredStyle:UIAlertControllerStyleActionSheet];
     UIAlertAction *cancelAction = [UIAlertAction actionWithTitle:@"取消"style:UIAlertActionStyleCancel handler:nil];
@@ -173,7 +176,7 @@
     [alertController addAction:cancelAction];
     [alertController addAction:deleteAction];
     [alertController addAction:archiveAction];
-    [self.tableVC presentViewController:alertController animated:YES completion:nil];
+    [[UIApplication sharedApplication].keyWindow.rootViewController presentViewController:alertController animated:YES completion:nil];
 }
 
 #pragma mark - 低栏四按钮设置
@@ -192,7 +195,7 @@
 - (void)commentBtnClick{
     SFLCommentVC *commentVC = [[SFLCommentVC alloc] init];
     commentVC.topic = self.topic;
-    [self.tableVC.navigationController pushViewController:commentVC animated:YES];
+    [[UIApplication sharedApplication].keyWindow.rootViewController.navigationController pushViewController:commentVC animated:YES];
 }
 
 @end

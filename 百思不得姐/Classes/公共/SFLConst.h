@@ -44,3 +44,5 @@ UIKIT_EXTERN CGFloat const SFLTopicCellTopCmtTitleH;
 /** tabBarVC 被点击的通知 */
 UIKIT_EXTERN NSString * const SFLTabBarSelectedNotification;
 
+/** SFLTopicCell 正在播放流媒体的通知 */
+UIKIT_EXTERN NSString * const SFLTopicCellPlayingMediaNotification;

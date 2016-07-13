@@ -7,7 +7,9 @@
 //
 
 #import <Foundation/Foundation.h>
+
 @class SFLComment;
+@class SFLTopicTableVC;
 
 @interface SFLTopic : NSObject
 /** id */
@@ -43,14 +45,21 @@
 @property (nonatomic, copy) NSString *large_image;
 /** 帖子的类型 */
 @property (nonatomic, assign) SFLTopicType type;
+
+/** 音频的URL */
+@property (nonatomic, copy) NSString *voiceuri;
 /** 音频时长 */
 @property (nonatomic, assign) NSInteger voicetime;
+
+/** 视频的URL */
+@property (nonatomic, copy) NSString *videouri;
 /** 视频时长 */
 @property (nonatomic, assign) NSInteger videotime;
 /** 播放次数 */
 @property (nonatomic, assign) NSInteger playcount;
 /** 最热评论 */
 @property (nonatomic, strong) SFLComment *top_cmt;
+
 
 
 // 额外的辅助属性

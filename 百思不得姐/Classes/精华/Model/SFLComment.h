@@ -7,8 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-@class SFLUser;
+#import <AVFoundation/AVFoundation.h>
 
+@class SFLUser;
+@class AVFoundation;
 @interface SFLComment : NSObject
 
 /** id */
@@ -28,4 +30,5 @@
 // 辅助数据
 /** cell 的高度 */
 @property (nonatomic, assign) CGFloat cellHeight;
+
 @end
