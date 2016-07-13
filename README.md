@@ -28,19 +28,25 @@
 ### 三、项目展示
 
 - 在线视频播放
+
 ![](./imgs/video.gif)
 
 - 在线音频播放
+
 ![](./imgs/music.gif)
 
 - 在线图片查看
+
 ![](./imgs/picture.gif)
 
 - 声音模块
+
 ![](./imgs/voice.gif)
 
 - 网页模块
+
 ![](./imgs/web.gif)
 
 - 其他
+
 ![](./imgs/other.gif)
